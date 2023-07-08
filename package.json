@@ -1,6 +1,5 @@
 {
   "name": "chakra-vite-starter",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -12,10 +11,12 @@
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@saas-ui/react": "^1.9.3",
     "framer-motion": "^10.12.16",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.14.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.7",
