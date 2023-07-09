@@ -5,7 +5,7 @@ import IGicon from "./IGicon";
 
 export default function SocialButtons() {
   return (
-    <Flex direction="row" gap="10px" flexWrap="wrap" justifyContent="center">
+    <Flex direction="row" gap="10px" flexWrap="nowrap" justifyContent="center">
       <IconButton
         aria-label="Login with Apple"
         icon={<FaApple />}
