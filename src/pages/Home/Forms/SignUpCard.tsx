@@ -17,7 +17,7 @@ export default function SignUpCard() {
   return (
     <Card
       height="100%"
-      w={{ base: "100%", md: "400px" }}
+      w={{ base: "80%", lg: "100%" }}
       bg="unset"
       display="flex"
     >
@@ -25,7 +25,7 @@ export default function SignUpCard() {
         m="0"
         display="flex"
         gap="12px"
-        px="20px"
+        px="25px"
         pt="30px"
         pb="20px"
         bg="white"
@@ -47,10 +47,16 @@ export default function SignUpCard() {
         <Text fontSize="14px" color="#A3A3A3">
           or continue with email
         </Text>
-        <Box w={{ base: "100%", md: "80%" }}>
+        <Box maxW="250px" w={{ base: "100%", md: "90%" }}>
           <EmailForm />
         </Box>
-        <Text align="center" fontSize={{ base: "10px", md: "12px" }} px="20px">
+        <Text
+          align="center"
+          fontSize={{ base: "10px", md: "10px" }}
+          pt="10px"
+          px="10px"
+          maxW="300px"
+        >
           By signing up, you are creating a DJfan account and agree to DJfan’s
           Terms and <Link color="blue.400">Privacy Policy</Link>
         </Text>

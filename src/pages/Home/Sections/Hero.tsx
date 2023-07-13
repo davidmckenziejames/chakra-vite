@@ -11,31 +11,29 @@ export default function Hero() {
       alignItems="center"
       justifyContent="center"
       py={{ base: "0px", md: "20px" }}
-      px={{ base: "10px", md: "20px" }}
     >
       <Flex
         flexDirection={{ base: "column", md: "row" }}
-        maxW={{ base: "100%", md: "1200px" }}
-        flex={1}
+        maxW={{ base: "100%", md: "1024px" }}
         pt="30px"
         pb="50px"
-        justifyContent="space-evenly"
+        justifyContent="space-between"
+        px={{ base: "10px", md: "10px" }}
       >
         <Flex
           id="left"
           flexDirection="column"
-          w={{ base: "100%", lg: "50%" }}
-          mr={{ base: "0", lg: "50px" }}
+          w={{ base: "100%", md: "65%" }}
           gap="20px"
-          px={{ base: "10px", lg: "20px" }}
-          mt="20px"
+          px={{ base: "10px", md: "0px" }}
+          mt="10px"
           mb="20px"
         >
           <Heading
-            pr={{ base: "0", md: "20px" }}
             color="white"
-            fontSize={{ base: "30px", md: "40px" }}
+            fontSize={{ base: "30px", md: "48px" }}
             lineHeight="1.1em"
+            maxW={{ base: "100%", md: "90%" }}
           >
             We bring creators and fans closer
             <Highlight
@@ -51,6 +49,7 @@ export default function Hero() {
             color="white"
             fontWeight="500"
             fontSize={{ base: "16px", md: "19px" }}
+            maxW={{ base: "100%", md: "80%" }}
           >
             Everything from your favourute DJs in one place. All mixes, tracks,
             and videos ready to stream. Unlock their hidden playlists, receive
@@ -59,9 +58,14 @@ export default function Hero() {
 
           <Avatars />
         </Flex>
-        <Box mx={{ base: "10px", md: "0" }}>
+        <Flex
+          flexDirection="column"
+          h="100%"
+          w={{ base: "100%", md: "35%" }}
+          align="center"
+        >
           <SignUpCard />
-        </Box>
+        </Flex>
       </Flex>
     </Box>
   );
