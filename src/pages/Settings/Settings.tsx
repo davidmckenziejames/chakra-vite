@@ -1,10 +1,7 @@
-import Header from "../Home/Sections/Header";
 import {
   Box,
   Flex,
   Button,
-  Select,
-  Heading,
   Menu,
   MenuButton,
   MenuList,
@@ -14,12 +11,11 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  TabIndicator,
-  Text,
-  Card,
 } from "@chakra-ui/react";
-import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
+
+import Header from "../Home/Sections/Header";
 import ProfileSettings from "./Panels/ProfileSettings";
 import AccountSettings from "./Panels/AccountSettings";
 import BillingSettings from "./Panels/BillingSettings";
@@ -28,19 +24,18 @@ import Notifications from "./Panels/Notifications";
 
 export default function Settings() {
   const [tabIndex, setTabIndex] = useState(0);
-
-  const handleTabsChange = (index) => {
-    setTabIndex(index);
+  const tabProps = {
+    as: Button,
+    variant: "unstyled",
+    fontSize: "16px",
+    fontWeight: "500",
+    _selected: { color: "#8338ec", fontWeight: "500", bg: "white" },
   };
-
-  const handleMenuItemClick = (index) => {
-    setTabIndex(index);
-  };
+  const panelProps = { bg: "white", mt: "20px", borderRadius: "15px" };
 
   return (
     <Box>
       <Header />
-
       <Flex
         bg="gray.200"
         mx="auto"
@@ -52,7 +47,7 @@ export default function Settings() {
       >
         <Tabs
           index={tabIndex}
-          onChange={handleTabsChange}
+          onChange={setTabIndex}
           pt="15px"
           variant="soft-rounded"
           colorScheme="green"
@@ -60,39 +55,14 @@ export default function Settings() {
         >
           <Box bg="white" px="10px" py="10px" borderRadius="15px">
             <TabList>
-              <Tab
-                as={Button}
-                variant="unstyled"
-                fontSize="18px"
-                fontWeight="500"
-                _selected={{ color: "#8338ec", fontWeight: "500", bg: "white" }}
-              >
-                Profile
-              </Tab>
-              <Tab
-                as={Button}
-                variant="unstyled"
-                fontSize="18px"
-                fontWeight="500"
-                _selected={{ color: "#8338ec", fontWeight: "500" }}
-              >
-                Account
-              </Tab>
-
-              <Tab
-                fontSize="18px"
-                as={Button}
-                variant="unstyled"
-                fontWeight="500"
-                _selected={{ color: "#8338ec", fontWeight: "500" }}
-              >
-                Memberships
-              </Tab>
+              <Tab {...tabProps}>Profile</Tab>
+              <Tab {...tabProps}>Account</Tab>
+              <Tab {...tabProps}>Memberships</Tab>
               <Menu>
                 <MenuButton
                   as={Button}
                   variant="unstyled"
-                  fontSize="18px"
+                  fontSize="16px"
                   fontWeight="500"
                   ml="16px"
                   rightIcon={<FaChevronDown size={12} />}
@@ -100,31 +70,28 @@ export default function Settings() {
                   More
                 </MenuButton>
                 <MenuList>
-                  <MenuItem onClick={() => handleMenuItemClick(3)}>
-                    Billing
-                  </MenuItem>
-                  <MenuItem onClick={() => handleMenuItemClick(4)}>
+                  <MenuItem onClick={() => setTabIndex(3)}>Billing</MenuItem>
+                  <MenuItem onClick={() => setTabIndex(4)}>
                     Notifications
                   </MenuItem>
                 </MenuList>
               </Menu>
             </TabList>
           </Box>
-
           <TabPanels>
-            <TabPanel bg="white" mt="20px" borderRadius="15px">
+            <TabPanel {...panelProps}>
               <ProfileSettings />
             </TabPanel>
-            <TabPanel bg="white" mt="20px" borderRadius="15px">
+            <TabPanel {...panelProps}>
               <AccountSettings />
             </TabPanel>
-            <TabPanel bg="white" mt="20px" borderRadius="15px">
+            <TabPanel p="0">
               <Memberships />
             </TabPanel>
-            <TabPanel bg="white" mt="20px" borderRadius="15px">
+            <TabPanel {...panelProps}>
               <BillingSettings />
             </TabPanel>
-            <TabPanel bg="white" mt="20px" borderRadius="15px">
+            <TabPanel {...panelProps}>
               <Notifications />
             </TabPanel>
           </TabPanels>

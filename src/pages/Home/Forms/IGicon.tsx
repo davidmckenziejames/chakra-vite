@@ -1,4 +1,5 @@
-const IGicon = (props) => {
+import { SVGProps } from "react";
+const IGicon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       enableBackground="new 0 0 24 24"

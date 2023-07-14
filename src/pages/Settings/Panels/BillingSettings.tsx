@@ -26,21 +26,10 @@ export default function BillingSettings() {
   const handleClick = () => setShow(!show);
 
   return (
-    <Box pb="100px">
-      <Text fontSize="16px" pb="15px">
-        <i>Update your account settings.</i>
-      </Text>
+    <Box p="10px" pb="20px">
+      <Heading fontSize="20">Billing</Heading>
       <Flex direction="column" gap="25px">
-        <Button
-          bg={"#000000"}
-          w="200px"
-          color={"white"}
-          _hover={{
-            bg: "#8E03B5",
-          }}
-        >
-          Update Password
-        </Button>
+        <Text>TBC.</Text>
       </Flex>
     </Box>
   );
