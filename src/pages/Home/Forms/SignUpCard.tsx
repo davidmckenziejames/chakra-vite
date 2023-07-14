@@ -17,7 +17,7 @@ export default function SignUpCard() {
   return (
     <Card
       height="100%"
-      w={{ base: "80%", lg: "100%" }}
+      w={{ base: "90%", lg: "100%" }}
       bg="unset"
       display="flex"
     >
@@ -26,7 +26,7 @@ export default function SignUpCard() {
         display="flex"
         gap="12px"
         px="25px"
-        pt="30px"
+        pt={{ base: "20px", sm: "30px" }}
         pb="20px"
         bg="white"
         flexDirection="column"
@@ -34,8 +34,16 @@ export default function SignUpCard() {
         borderRadius="lg"
         border="2px solid cyan"
       >
-        <Heading display="flex" alignItems="center" fontSize="24px">
-          <Icon fontSize="22px" as={FaUnlock} marginRight="8px" />
+        <Heading
+          display="flex"
+          alignItems="center"
+          fontSize={{ base: "18px", sm: "24px" }}
+        >
+          <Icon
+            fontSize={{ base: "18px", sm: "22px" }}
+            as={FaUnlock}
+            marginRight="8px"
+          />
           Unlock DJ Content
         </Heading>
         <Text align="center" fontSize="14px" color="#22A9FC" fontWeight="500">
@@ -55,7 +63,7 @@ export default function SignUpCard() {
           fontSize={{ base: "10px", md: "10px" }}
           pt="10px"
           px="10px"
-          maxW="300px"
+          maxW="350px"
         >
           By signing up, you are creating a DJfan account and agree to DJfan’s
           Terms and <Link color="blue.400">Privacy Policy</Link>

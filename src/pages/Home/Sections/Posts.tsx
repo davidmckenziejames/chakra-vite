@@ -11,7 +11,9 @@ export default function Posts() {
           align="center"
           gap="30px"
         >
-          <Heading fontSize="32px">Latest Featured Posts</Heading>
+          <Heading fontSize={{ base: "24px", sm: "28px" }}>
+            Latest Featured Posts
+          </Heading>
           <PostCardImage />
           <PostCardImage />
           <PostCardImage />

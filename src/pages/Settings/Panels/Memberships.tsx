@@ -17,12 +17,19 @@ function Membership({
   membershipType,
   nextChargeDate,
 }: MembershipProps) {
+  
   return (
     <Card borderRadius="15px">
       <Flex direction="row" alignItems="center" p="20px">
-        <Avatar size="lg" name="User Avatar" src={avatarUrl} />
+        <Avatar
+          size={{ base: "md", sm: "lg" }}
+          name="User Avatar"
+          src={avatarUrl}
+        />
         <Flex flexDirection="column" align="start" ml="4">
-          <Text fontWeight="bold">{name}</Text>
+          <Text fontSize={{ base: "14px", sm: "18px" }} fontWeight="bold">
+            {name}
+          </Text>
           <Text fontSize="12px">
             ${membershipPrice} per month ({membershipType} member)
           </Text>

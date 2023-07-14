@@ -41,6 +41,7 @@ export default function AccountSettings() {
               focusBorderColor="#69f2eb"
               id="first_name"
               placeholder="First Name"
+              defaultValue="David"
             />
           </InputGroup>
         </FormControl>
@@ -55,6 +56,7 @@ export default function AccountSettings() {
               focusBorderColor="#69f2eb"
               id="last_name"
               placeholder="Last Name"
+              defaultValue="McKenzie-James"
             />
           </InputGroup>
         </FormControl>
@@ -65,13 +67,22 @@ export default function AccountSettings() {
             <InputLeftElement pointerEvents="none">
               <FaRegEnvelope color="#bebebe" />
             </InputLeftElement>
-            <Input focusBorderColor="#69f2eb" id="email" placeholder="Email" />
+            <Input
+              focusBorderColor="#69f2eb"
+              id="email"
+              placeholder="Email"
+              defaultValue="david@djfan.net"
+            />
           </InputGroup>
         </FormControl>
 
         <FormControl id="country">
           <FormLabel>Select country</FormLabel>
-          <Select focusBorderColor="#69f2eb" placeholder="Select country">
+          <Select
+            focusBorderColor="#69f2eb"
+            placeholder="Select country"
+            defaultValue="GB"
+          >
             <Countries />
           </Select>
         </FormControl>

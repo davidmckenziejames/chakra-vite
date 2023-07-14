@@ -12,7 +12,6 @@ import {
   Avatar,
   Button,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 
 export default function ProfileSettings() {
@@ -25,7 +24,11 @@ export default function ProfileSettings() {
         <FormControl id="picture">
           <FormLabel>Picture</FormLabel>
           <Stack direction="row" align="center" gap="15px">
-            <Avatar name="" src="" size="lg" />
+            <Avatar
+              name=""
+              src="https://djfan.ams3.cdn.digitaloceanspaces.com/2023/07/dmj-profile-crop.jpg"
+              size="lg"
+            />
             <Button>Upload</Button>
             <IconButton
               variant="outline"
@@ -37,7 +40,7 @@ export default function ProfileSettings() {
         </FormControl>
         <FormControl>
           <FormLabel>Display Name</FormLabel>
-          <Input type="name" />
+          <Input type="name" defaultValue="David McKenzie-James" />
           <FormHelperText>
             This is your public display name. It can be your real name or a
             pseudonym.
@@ -46,7 +49,7 @@ export default function ProfileSettings() {
 
         <FormControl>
           <FormLabel>Bio</FormLabel>
-          <Textarea />
+          <Textarea defaultValue="Co-Founder of DJfan" />
         </FormControl>
         <Button
           bg={"#BE04F1"}

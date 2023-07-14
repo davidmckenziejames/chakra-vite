@@ -51,7 +51,7 @@ export default function Hero() {
             fontSize={{ base: "16px", md: "19px" }}
             maxW={{ base: "100%", md: "80%" }}
           >
-            Everything from your favourute DJs in one place. All mixes, tracks,
+            Everything from your favourite DJs in one place. All mixes, tracks,
             and videos ready to stream. Unlock their hidden playlists, receive
             exclusive invites, and even chat directly.
           </Text>
