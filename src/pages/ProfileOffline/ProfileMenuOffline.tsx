@@ -1,18 +1,4 @@
-import {
-  Box,
-  Tab,
-  TabIndicator,
-  TabPanel,
-  TabPanels,
-  TabList,
-  Tabs,
-} from "@chakra-ui/react";
-import ProfilePosts from "./ProfilePosts";
-import ProfileBio from "./ProfileBio";
-import ProfileEvents from "./ProfileEvents";
-import ProfileProducts from "./ProfileProducts";
-import ProfileAudio from "./ProfileAudio";
-import ProfileMembership from "./ProfileMembership";
+import { Box, Tab, TabPanel, TabPanels, TabList, Tabs } from "@chakra-ui/react";
 import {
   FaHome,
   FaUser,
@@ -27,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import ProfilePostsOffline from "./ProfilePostsOffline";
 interface CustomTabProps {
   icon: React.ElementType;
   text: string;
@@ -51,7 +38,7 @@ const CustomTab: React.FC<CustomTabProps> = ({ icon, text }) => (
     </Box>
   </Tab>
 );
-export default function ProfileMenu() {
+export default function ProfileMenuOffline() {
   const location = useLocation();
   const [tabIndex, setTabIndex] = useState(0);
   useEffect(() => {
@@ -117,27 +104,29 @@ export default function ProfileMenu() {
 
         <TabPanels>
           <TabPanel>
-            <ProfilePosts />
+            <ProfilePostsOffline />
           </TabPanel>
           <TabPanel bg="black">
-            <ProfileBio />
+            <ProfilePostsOffline />
           </TabPanel>
           <TabPanel>
-            <ProfileAudio />
+            <ProfilePostsOffline />
           </TabPanel>
           <TabPanel>
-            <ProfileAudio />
+            <ProfilePostsOffline />
           </TabPanel>
           <TabPanel>
-            <ProfileAudio />
+            <ProfilePostsOffline />
           </TabPanel>
           <TabPanel>
-            <ProfileEvents />
+            <ProfilePostsOffline />
           </TabPanel>
           <TabPanel>
-            <ProfileProducts />
+            <ProfilePostsOffline />
           </TabPanel>
-          <TabPanel></TabPanel>
+          <TabPanel>
+            <ProfilePostsOffline />
+          </TabPanel>
         </TabPanels>
       </Tabs>
     </Box>

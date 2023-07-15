@@ -15,9 +15,7 @@ import {
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import Layout from "../../layout/Layout";
-import { useLocation } from "react-router-dom";
 
-import Header from "../Home/Sections/Header";
 import ProfileSettings from "./Panels/ProfileSettings";
 import AccountSettings from "./Panels/AccountSettings";
 import BillingSettings from "./Panels/BillingSettings";
