@@ -1,11 +1,4 @@
 import {
-  Drawer,
-  DrawerOverlay,
-  DrawerHeader,
-  DrawerContent,
-  DrawerCloseButton,
-  IconButton,
-  Button,
   Image,
   useDisclosure,
   Flex,
@@ -13,48 +6,49 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuDivider,
   MenuItem,
-  Heading,
   Box,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Input,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
+  MenuDivider,
 } from "@chakra-ui/react";
-import { CgMenu } from "react-icons/cg";
 import SignInButton from "../Home/Sections/HeaderComponents/SignInButton";
-import React, { useState } from "react";
-import { FaBars, FaHeadphones, FaSearch } from "react-icons/fa";
+import {
+  FaBars,
+  FaUser,
+  FaSearch,
+  FaHeadphones,
+  FaChevronDown,
+  FaPlus,
+  FaEllipsisH,
+  FaCaretDown,
+} from "react-icons/fa";
 import SearchIconMobile from "./MenuButtons/SearchIconMobile";
 import SearchIcon from "./MenuButtons/SearchIcon";
-
-const menuItemsBase = [
-  { text: "About", href: "#" },
-  { text: "Explore", href: "#" },
-  { text: "Contact Us", href: "#" },
-];
-
-const menuItemsMore = [
-  { text: "Help", href: "#" },
-  { text: "Settings", href: "#" },
-  { divider: true },
-  { text: "Terms of Use", href: "#" },
-  { text: "Privacy Policy", href: "#" },
-];
+import React, { useState, useCallback } from "react";
 
 export default function HeaderOffline() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [showMore, setShowMore] = useState(false);
+  const { isOpen, onOpen, onClose: onMenuClose } = useDisclosure();
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = useCallback(() => setIsVisible((prev) => !prev), []);
+  const onClose = useCallback(() => {
+    onMenuClose();
+    setIsVisible(false); // reset visibility when menu is closed
+  }, [onMenuClose]);
 
-  const menuItems = showMore
-    ? [...menuItemsBase, ...menuItemsMore]
-    : [...menuItemsBase];
+  const NavBarItems = [
+    { name: "Create Account", path: "/create-account", icon: <FaUser /> },
+    { name: "Explore Artists", path: "/explore", icon: <FaSearch /> },
+    {
+      name: "Become a Creator",
+      path: "/become-creator",
+      icon: <FaHeadphones />,
+    },
+  ];
+
+  const HiddenPanelItems = [
+    { name: "About", path: "/link1" },
+    { name: "Terms of Use", path: "/link2" },
+    { name: "Privacy Policy", path: "/link3" },
+  ];
 
   return (
     <Box
@@ -64,7 +58,7 @@ export default function HeaderOffline() {
       position="sticky"
       top="0"
       zIndex="sticky"
-      height={{ base: "50px", md: "60px" }}
+      height={{ base: "55px", md: "60px" }}
       px={{ base: "10px", md: "0px" }}
       py={{ base: "10px", md: "10px" }}
       display="flex"
@@ -85,13 +79,14 @@ export default function HeaderOffline() {
           src="https://djfan.app/wp-content/uploads/2023/04/djfan-email.png"
         />
         <Flex align="center" gap="15px">
+          <SignInButton />
           <Box display={{ base: "flex", md: "none" }}>
             <SearchIconMobile />
           </Box>
           <Box display={{ base: "none", md: "flex" }}>
             <SearchIcon />
           </Box>
-          <Menu>
+          <Menu onClose={onClose}>
             <MenuButton>
               <Box
                 as="a"
@@ -102,27 +97,69 @@ export default function HeaderOffline() {
                 <FaBars />
               </Box>
             </MenuButton>
-            <MenuList minW="unset" mt="10px" p="0" py="10px">
-              {menuItems.map((item, index) =>
-                item.divider ? (
-                  <MenuDivider key={index} />
-                ) : (
+            <MenuList
+              minW="150px"
+              display="flex"
+              mt="10px"
+              p="0"
+              py="px"
+              pb="5px"
+            >
+              <Flex flexDirection="column" w="100%">
+                {NavBarItems.map((item) => (
                   <MenuItem
-                    minW="130px"
-                    pl="15px"
-                    pr="10px"
-                    py="5px"
-                    as="a"
-                    href={item.href}
-                    key={index}
+                    gap="8px"
+                    as={Link}
+                    to={item.path}
+                    px="16px"
+                    py="10px"
+                    fontWeight="500"
+                    key={item.path}
                   >
-                    {item.text}
+                    {item.icon} {/* render the icon */}
+                    {item.name}
                   </MenuItem>
-                )
-              )}
-              {!showMore && (
-                <Button onClick={() => setShowMore(true)}>Show More</Button>
-              )}
+                ))}
+                <Link
+                  id="more"
+                  pl="15px"
+                  onClick={toggleVisibility}
+                  color={isVisible ? "#AAAAAA" : "black"}
+                  textDecoration="none"
+                  cursor="pointer"
+                  _hover={{ color: "#9000B8" }}
+                  py="5px"
+                  px="16px"
+                  fontSize="16px"
+                  fontWeight="500"
+                  alignItems="center"
+                  gap="4px"
+                  justifyContent="flex-end"
+                  display={isVisible ? "none" : "flex"} // hide when expanded
+                >
+                  More <FaCaretDown />
+                </Link>
+                <Flex
+                  id="hiddenPanel"
+                  flexDirection="column"
+                  w="100%"
+                  style={{ display: isVisible ? "flex" : "none" }}
+                >
+                  <MenuDivider />
+                  {HiddenPanelItems.map((item) => (
+                    <MenuItem
+                      as={Link}
+                      fontSize="14px"
+                      to={item.path}
+                      py="4px"
+                      px="16px"
+                      key={item.path}
+                    >
+                      {item.name}
+                    </MenuItem>
+                  ))}
+                </Flex>
+              </Flex>
             </MenuList>
           </Menu>
         </Flex>

@@ -1,4 +1,6 @@
 import {
+  Modal,
+  ModalOverlay,
   ModalContent,
   ModalFooter,
   ModalBody,
@@ -9,13 +11,16 @@ import {
   Input,
   InputGroup,
   Flex,
+  Box,
   Button,
   Heading,
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import SocialButtons from "../../Forms/SocialButtons";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaHeadphones } from "react-icons/fa";
+import SignInLink from "../../../ProfileOffline/SignInLink";
+import SignInModal from "./SignInModal";
 export default function RegisterModal() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -30,9 +35,9 @@ export default function RegisterModal() {
           gap="10px"
           px="0"
         >
-          <Heading fontSize="24px">Welcome Back!</Heading>
+          <Heading fontSize="24px">Create Free Account</Heading>
           <Text align="center" fontSize="14px" color="#22A9FC" fontWeight="500">
-            Sign in with:
+            Continue with:
           </Text>
           <SocialButtons />
           <Text fontSize="14px" color="#A3A3A3">
@@ -85,21 +90,32 @@ export default function RegisterModal() {
                 color: "white",
               }}
             >
-              SIGN IN
+              GET STARTED
             </Button>
           </Flex>
         </ModalBody>
 
-        <ModalFooter justifyContent="center" p="0">
-          <Link
+        <ModalFooter
+          justifyContent="center"
+          p="0"
+          display="flex"
+          flexDirection="column"
+        >
+          <Box
+            as="span"
             mt="10px"
             mb="20px"
-            fontSize="12px"
-            color="gray.400"
-            fontWeight="600"
+            display="flex"
+            alignItems="center"
+            fontSize="14px"
+            gap="5px"
           >
-            Forgot your password?
-          </Link>
+            <FaHeadphones />
+            Are you a DJ?{" "}
+            <Box as="a" href="/dj" color="#9605F2" fontWeight="500">
+              Sign up here
+            </Box>
+          </Box>
         </ModalFooter>
       </ModalContent>
     </>

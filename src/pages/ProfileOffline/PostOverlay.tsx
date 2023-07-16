@@ -44,7 +44,8 @@ export default function PostOverlay() {
             fontSize={{ base: "18px", md: "20px" }}
             fontWeight="500"
           >
-            Please <SignInLink color="#9BFFFA" /> to view this post
+            Please <SignInLink linkText="sign in" color="#9BFFFA" /> to view
+            this post
           </Heading>
           <Box
             as="button"
