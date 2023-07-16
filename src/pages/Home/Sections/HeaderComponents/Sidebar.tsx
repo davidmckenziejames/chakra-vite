@@ -3,7 +3,9 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Flex,
+  Link,
 } from "@chakra-ui/react";
+import { FaHome } from "react-icons/fa";
 
 export default function Sidebar() {
   return (
@@ -11,7 +13,11 @@ export default function Sidebar() {
       <DrawerBody>
         <DrawerCloseButton color="black" />
         <Flex direction="column" pt="20px">
-          <p>Coming soon...</p>
+          <Link display="flex" gap="8px" alignItems="center" fontSize="20px">
+            <FaHome fontSize="20px" />
+            Home
+          </Link>
+
           <p>Some contents...</p>
           <p>Some contents...</p>
         </Flex>

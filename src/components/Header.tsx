@@ -18,6 +18,7 @@ export default function Header({ onOpen, ...rest }) {
       bg="white"
       borderBottomWidth="1px"
       borderBottomColor="gray.200"
+      zIndex="10"
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >

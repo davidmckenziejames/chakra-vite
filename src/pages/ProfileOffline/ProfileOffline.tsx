@@ -1,12 +1,11 @@
 import ProfileHeader from "../Profile/ProfileHeader";
-import Layout from "../../layout/Layout";
+import LayoutOffline from "./LayoutOffline";
 import ProfileMenuOffline from "./ProfileMenuOffline";
-
 export default function ProfileOffline() {
   return (
-    <Layout>
+    <LayoutOffline>
       <ProfileHeader />
       <ProfileMenuOffline />
-    </Layout>
+    </LayoutOffline>
   );
 }

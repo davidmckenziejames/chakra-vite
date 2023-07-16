@@ -1,6 +1,7 @@
 import { Flex, Button, Box } from "@chakra-ui/react";
 import PostCardImageOffline from "./Posts/PostCardImageOffline";
 import PostCardImageOfflineVIP from "./Posts/PostCardImageOfflineVIP";
+import PostCardImageOfflineGold from "./Posts/PostCardImageOfflineGold";
 
 export default function ProfilePostsOffline() {
   return (
@@ -18,6 +19,9 @@ export default function ProfilePostsOffline() {
       </Box>
       <Box width={{ base: "100%", md: "500px" }}>
         <PostCardImageOfflineVIP />
+      </Box>
+      <Box width={{ base: "100%", md: "500px" }}>
+        <PostCardImageOfflineGold />
       </Box>
     </Flex>
   );

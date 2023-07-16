@@ -1,7 +1,7 @@
 import { AppProps } from "next/app";
 import * as React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "@layout/index";
+import Layout from "../layout/Layout";
 import Head from "next/head";
 import "layout/styles.css";
 
@@ -11,11 +11,8 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>DJfan</title>
       </Head>
-
       <ChakraProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </ChakraProvider>
     </>
   );

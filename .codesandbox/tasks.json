@@ -23,10 +23,6 @@
       "name": "preview",
       "command": "yarn preview",
       "runAtStart": false
-    },
-    "how to use react router": {
-      "name": "how to use react router",
-      "command": "how to use react router"
     }
   }
 }

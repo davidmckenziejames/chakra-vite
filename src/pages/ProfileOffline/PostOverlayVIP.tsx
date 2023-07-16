@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, MenuItem, Text } from "@chakra-ui/react";
 import SignInLink from "./SignInLink";
-import { FaSignInAlt } from "react-icons/fa";
+import { FaSignInAlt, FaUnlock } from "react-icons/fa";
 type PostMenuProps = {
   icon: React.ElementType;
   label: string;
@@ -27,8 +27,7 @@ export default function PostOverlayVIP() {
       >
         <Flex
           opacity="1"
-          id="text"
-          gap="10px"
+          gap="15px"
           flexDirection="column"
           align="center"
           width="100%"
@@ -42,17 +41,17 @@ export default function PostOverlayVIP() {
             gap={{ base: "6px", md: "6px" }}
             color="white"
             fontSize={{ base: "18px", md: "20px" }}
-            fontWeight="500"
+            fontWeight="600"
           >
             Join my VIP Membership to view
           </Heading>
           <Box
             as="button"
             display="flex"
+            flexDirection="row"
             alignItems="center"
-            gap="5px"
-            px="12px"
-            py="8px"
+            px="15px"
+            py="10px"
             border="2px solid black"
             borderRadius="6px"
             transition="all 0.3s ease"
@@ -77,8 +76,12 @@ export default function PostOverlayVIP() {
                 "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
             }}
           >
-            Start Trial
-            <FaSignInAlt />
+            <Box as="span" mr="10px">
+              <FaUnlock />
+            </Box>
+            <Box as="span">
+              Unlock <b>VIP</b> for $1
+            </Box>
           </Box>
         </Flex>
       </Box>
