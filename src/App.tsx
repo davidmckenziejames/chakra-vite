@@ -1,8 +1,7 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-
-import { useSupabaseSession } from '../supabase'
+import { useSupabaseSession } from './supabase'
 import { Auth } from './Auth'
 import Home from './pages/Home/Home'
 import Onboarding from "./pages/Onboarding/Onboarding";
@@ -15,7 +14,7 @@ import ProfileOffline from "./pages/ProfileOffline/ProfileOffline";
 import Explore from "./pages/Explore/Explore";
 
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
   const session = useSupabaseSession()
 
   if (session === undefined) {
@@ -32,16 +31,17 @@ export const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Home />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/feed" element={<Feed />} />
-          <Route path="/profile-loggedout" element={<ProfileOffline />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/profile-loggedout" element={<ProfileOffline />} />
       </Routes>
     </Flex>
   )
 }
+
+export default App;
