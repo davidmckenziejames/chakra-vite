@@ -8,7 +8,7 @@ import Product from "./pages/Product/Product";
 import Checkout from "./pages/Checkout/Checkout";
 import Feed from "./pages/Profile/Feed";
 import ProfileOffline from "./pages/ProfileOffline/ProfileOffline";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import "./index.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Explore from "./pages/Explore/Explore";
