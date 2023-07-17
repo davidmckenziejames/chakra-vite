@@ -1,11 +1,17 @@
 {
-  "name": "chakra-vite-starter",
+  "name": "djfan-fan",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --noEmit --watch",
+    "lint": "eslint --cache 'src/**/*.{ts,tsx}' --max-warnings=0",
+    "test": "jest",
+    "test:watch": "jest --watch --notify"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.7.0",
@@ -21,18 +27,43 @@
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.0",
     "react-h5-audio-player": "^3.8.6",
+    "history": "5",
     "react-icons": "^4.4.0",
     "react-redux": "^8.1.1",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.14.1",
     "react-select": "^5.7.4",
-    "styled-components": "^6.0.3"
+    "styled-components": "^6.0.3",
+    "react-query": "^3.32.1"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.11.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.2",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
     "@vitejs/plugin-react-swc": "^3.3.1",
     "typescript": "^5.0.4",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "esbuild": "^0.13.12",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^7.31.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.8.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-no-only-tests": "^2.6.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
+    "jest-circus": "^27.3.1",
+    "node-notifier": "^10.0.0",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.2"
   }
 }
