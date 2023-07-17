@@ -20,7 +20,7 @@ import {
 import { FiShare, FiEye, FiMoreVertical } from "react-icons/fi";
 import PostActions from "./PostActionsOffline";
 import PostOverlay from "../PostOverlay";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 type PostMenuProps = {
   icon: React.ElementType;
@@ -125,6 +125,7 @@ export default function PostCardImageOffline() {
           </Box>
         </Text>
       </CardFooter>
+
       <PostActions />
     </Card>
   );
