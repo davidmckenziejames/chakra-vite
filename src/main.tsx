@@ -1,40 +1,41 @@
-import React from "react";
+import * as React from "react";
 import ReactDOM from "react-dom/client";
-import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
-import { createClient as createSupabaseClient } from '@supabase/supabase-js'
+import Home from "./pages/Home/Home";
+import Onboarding from "./pages/Onboarding/Onboarding";
+import Settings from "./pages/Settings/Settings";
+import Profile from "./pages/Profile/Profile";
+import Product from "./pages/Product/Product";
+import Checkout from "./pages/Checkout/Checkout";
+import Feed from "./pages/Profile/Feed";
+import ProfileOffline from "./pages/ProfileOffline/ProfileOffline";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import "./index.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Explore from "./pages/Explore/Explore";
 import theme from "./theme";
 import "@fontsource/chakra-petch/300.css";
 import "@fontsource/chakra-petch/400.css";
 import "@fontsource/chakra-petch/500.css";
 import "@fontsource/chakra-petch/600.css";
 import "@fontsource/chakra-petch/700.css";
+import { baseTheme } from '@saas-ui/react'
 
-import  App  from './App'
-import { SupabaseProvider } from './supabase'
-
-const queryClient = new QueryClient()
-
-const supabaseClient = createSupabaseClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_KEY,
-)
-
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <SupabaseProvider client={supabaseClient}>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <ChakraProvider theme={theme}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </ChakraProvider>
-      </QueryClientProvider>
-    </SupabaseProvider>
-  </React.StrictMode>,
-  document.getElementById('root'),
-)
+    <ChakraProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/feed" element={<Feed />} />
+          <Route path="/profile-loggedout" element={<ProfileOffline />} />
+        </Routes>
+      </Router>
+    </ChakraProvider>
+  </React.StrictMode>
+);
