@@ -6,8 +6,6 @@ import {
   FaCalendar,
   FaStore,
   FaLock,
-  FaImage,
-  FaPlay,
   FaPlayCircle,
   FaImages,
 } from "react-icons/fa";

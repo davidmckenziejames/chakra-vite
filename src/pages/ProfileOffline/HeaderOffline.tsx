@@ -9,21 +9,20 @@ import {
   MenuItem,
   Box,
   MenuDivider,
+  IconButton,
 } from "@chakra-ui/react";
-import SignInButton from "../Home/Sections/HeaderComponents/SignInButton";
 import {
   FaBars,
   FaUser,
   FaSearch,
   FaHeadphones,
-  FaChevronDown,
-  FaPlus,
-  FaEllipsisH,
   FaCaretDown,
 } from "react-icons/fa";
+import SignInButton from "../Home/Sections/HeaderComponents/SignInButton";
 import SearchIconMobile from "./MenuButtons/SearchIconMobile";
 import SearchIcon from "./MenuButtons/SearchIcon";
 import React, { useState, useCallback } from "react";
+import { CgMenu, CgMenuRightAlt } from "react-icons/cg";
 
 export default function HeaderOffline() {
   const { isOpen, onOpen, onClose: onMenuClose } = useDisclosure();
@@ -33,6 +32,7 @@ export default function HeaderOffline() {
     onMenuClose();
     setIsVisible(false); // reset visibility when menu is closed
   }, [onMenuClose]);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const NavBarItems = [
     { name: "Create Account", path: "/create-account", icon: <FaUser /> },
@@ -88,14 +88,20 @@ export default function HeaderOffline() {
           </Box>
           <Menu onClose={onClose}>
             <MenuButton>
-              <Box
-                as="a"
-                onClick={onOpen}
-                color="white"
-                fontSize={{ base: "24px" }}
-              >
-                <FaBars />
-              </Box>
+            <IconButton
+            aria-label="Open menu"
+            icon={isHovered ? <CgMenu /> : <CgMenuRightAlt />}
+            display="flex"
+            color="white"
+            width={{ base: "38px", md: "38px" }}
+            height={{ base: "38px", md: "38px" }}
+            fontSize={{ base: "35px", md: "35px" }}
+            variant="unstyled"
+            onClick={onOpen}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          />
+             
             </MenuButton>
             <MenuList
               minW="150px"
@@ -105,21 +111,21 @@ export default function HeaderOffline() {
               py="px"
               pb="5px"
             >
-              <Flex flexDirection="column" w="100%">
-                {NavBarItems.map((item) => (
-                  <MenuItem
-                    gap="8px"
-                    as={Link}
-                    to={item.path}
-                    px="16px"
-                    py="10px"
-                    fontWeight="500"
-                    key={item.path}
-                  >
-                    {item.icon} {/* render the icon */}
-                    {item.name}
-                  </MenuItem>
-                ))}
+                <Flex flexDirection="column" w="100%">
+                  {NavBarItems.map((item) => (
+                    <MenuItem
+                      gap="8px"
+                      as={Link}
+                      href={item.path}
+                      px="16px"
+                      py="10px"
+                      fontWeight="500"
+                      key={item.path}
+                    >
+                      {item.icon} {/* render the icon */}
+                      {item.name}
+                    </MenuItem>
+                  ))}
                 <Link
                   id="more"
                   pl="15px"
@@ -150,12 +156,12 @@ export default function HeaderOffline() {
                     <MenuItem
                       as={Link}
                       fontSize="14px"
-                      to={item.path}
+                      href={item.path}
                       py="4px"
                       px="16px"
                       key={item.path}
                     >
-                      {item.name}
+                      {item.name} 
                     </MenuItem>
                   ))}
                 </Flex>

@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardBody,
   CardFooter,
@@ -11,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import EmailForm from "../Forms/EmailForm";
 import SocialButtons from "../Forms/SocialButtons";
-import { FaUnlock } from "react-icons/fa";
+import { FaUnlock, FaEnvelope } from "react-icons/fa";
 
 export default function SignUpCard() {
   return (
@@ -52,22 +53,44 @@ export default function SignUpCard() {
         <Box w="100%">
           <SocialButtons />
         </Box>
+
         <Text fontSize="14px" color="#A3A3A3">
-          or continue with email
+          or you can
         </Text>
-        <Box maxW="250px" w={{ base: "100%", md: "90%" }}>
-          <EmailForm />
-        </Box>
-        <Text
-          align="center"
-          fontSize={{ base: "10px", md: "10px" }}
-          pt="10px"
-          px="10px"
-          maxW="350px"
+        <Button
+          bg="white"
+          borderRadius="5px"
+          display="flex"
+          alignItems="center"
+          fontSize="15px"
+          fontWeight="600"
+          variant="unstyled"
+          color="#111111"
+          transition="all 0.3s ease"
+          border="2px solid black"
+          px="15px"
+          gap="8px"
+          height="40px"
+          _hover={{
+            boxShadow: `.15rem .15rem 0 #69f2eb, .3rem .3rem 0 #DB62FD`,
+            color: "black",
+            background: "white",
+            border: "2px solid black",
+          }}
         >
-          By signing up, you are creating a DJfan account and agree to DJfan’s
-          Terms and <Link color="blue.400">Privacy Policy</Link>
-        </Text>
+          <FaEnvelope />
+          Continue with Email
+        </Button>
+
+        <Button
+          leftIcon={<FaEnvelope />}
+          px="10px"
+          size="sm"
+          iconSpacing="1"
+          colorScheme="purple"
+        >
+          <Link>Continue with Email </Link>
+        </Button>
       </CardBody>
       <CardFooter
         p="0"

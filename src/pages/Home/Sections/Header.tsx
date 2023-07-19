@@ -37,8 +37,9 @@ export default function Header() {
       alignItems="center"
     >
       <Flex id="navbar" maxW="1024px" w="100%">
-        <Flex justify="flex-start" w="30%" align="center">
+        <Flex justify="flex-start" w="30%">
           <SignInButton />
+        
         </Flex>
         <Flex justify="center" w="40%" align="center">
           <Image

@@ -18,25 +18,24 @@ const renderArtistCard = ({
   />
 );
 
-export default function Explore() {
+export default function Following() {
   return (
     <Layout>
       <Flex
         maxW="full"
         flexDir="column"
         minH="100vh"
-        bg="black"
+        bg="white"
         py="20px"
         pb="50px"
         px={{ base: "0", sm: "8" }}
       >
         <Heading
           pb="20px"
-          color="white"
           pl={{ base: "20px", md: "0px" }}
           fontSize={{ base: "24px", md: "30px" }}
         >
-          Explore Creators
+          Arists You're Following
         </Heading>
         <SimpleGrid
           columns={{ base: 2, md: 6 }}

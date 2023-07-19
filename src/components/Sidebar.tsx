@@ -9,16 +9,14 @@ import {
   Heading,
   Divider,
   Link,
-  Button,
-  Icon,
 } from "@chakra-ui/react";
 
 import {
   FiHome,
   FiSettings,
   FiHeadphones,
-  FiMail,
-  FiBell,
+  FiHeart,
+  FiUserCheck,
 } from "react-icons/fi";
 
 import SidebarUser from "./SidebarUser";
@@ -36,6 +34,8 @@ const NavItem = ({ href, icon, children }) => (
 const navItems = [
   { href: "/feed", icon: FiHome, label: "Feed" },
   { href: "/explore", icon: FiHeadphones, label: "Explore Creators" },
+  { href: "/explore", icon: FiUserCheck, label: "Following" },
+  { href: "/subscriptions", icon: FiHeart, label: "Subscriptions" },
   { href: "/settings", icon: FiSettings, label: "Settings" },
 ];
 
@@ -80,6 +80,7 @@ export default function Sidebar({ onClose, ...rest }) {
           flexDirection="column"
           mt="5px"
           gap="5px"
+          color="pink"
           w="full"
           pl="25px"
           pr="15px"
@@ -91,43 +92,17 @@ export default function Sidebar({ onClose, ...rest }) {
             flexDirection="column"
             gap="10px"
             justifyContent="center"
+            pl="10px"
             py="20px"
           >
             {navItems.map(({ href, icon, label }) => (
               <NavItem key={href} href={href} icon={icon}>
-                {label}
+                <Box fontSize="18px" ml="4px">
+                  {" "}
+                  {label}
+                </Box>
               </NavItem>
             ))}
-          </Flex>
-
-          <Flex flexDirection="column" gap="10px" pt="20px">
-            <Heading color="white" fontSize="16px" fontWeight="600">
-              My Subscriptions
-            </Heading>
-            <Link href="/profile">
-              <HStack mt="5px" gap="10px">
-                <Avatar
-                  height="30px"
-                  width="30px"
-                  border="1px solid cyan"
-                  src={
-                    "https://djfan.ams3.cdn.digitaloceanspaces.com/2023/05/ff-bc341bdfde4ec0d1a583944ca302aa39-ff-richy_ahmed_metrodanceclub-358x500-1.jpg"
-                  }
-                />
-                \
-                <Heading color="white" fontSize="14px" fontWeight="600">
-                  Richy Ahmed
-                </Heading>
-              </HStack>
-            </Link>
-            <Link
-              href="/settings#membership"
-              fontSize="12px"
-              color="cyan"
-              textDecoration="underline"
-            >
-              Manage
-            </Link>
           </Flex>
         </Flex>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />

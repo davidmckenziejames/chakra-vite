@@ -7,6 +7,7 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
+import { SignInButton } from "@clerk/clerk-react";
 import { FiLock } from "react-icons/fi";
 import SignInModal from "../../Home/Sections/HeaderComponents/SignInModal";
 export default function PostActionsOffline() {
@@ -29,12 +30,12 @@ export default function PostActionsOffline() {
           color="#5C5C5C"
           fontSize={{ base: "14px", md: "16px" }}
         >
-          <Link href="/register" color="#8A0FD2" fontWeight="500">
-            Register
-          </Link>
+          <Box color="#8A0FD2" fontWeight="400">
+            <SignInButton mode="modal" redirectUrl="/profile" />
+          </Box>
           or
-          <Link color="#8A0FD2" fontWeight="500" onClick={onOpen}>
-            sign in
+          <Link href="/register" color="#8A0FD2" fontWeight="400">
+            register
           </Link>
           to{" "}
           <Box as="span" display={{ base: "none", md: "flex" }}>

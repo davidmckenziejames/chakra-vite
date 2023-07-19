@@ -137,7 +137,9 @@ export default function ProfileMenu() {
           <TabPanel>
             <ProfileProducts />
           </TabPanel>
-          <TabPanel></TabPanel>
+          <TabPanel>
+            <ProfileMembership />
+          </TabPanel>
         </TabPanels>
       </Tabs>
     </Box>

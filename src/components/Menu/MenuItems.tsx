@@ -1,5 +1,5 @@
 import { IconButton, Avatar, Box, Flex, Link, HStack } from "@chakra-ui/react";
-
+import { SignedIn, SignedOut, UserButton, useClerk } from "@clerk/clerk-react";
 import BioAvatar from "./BioAvatar";
 import Notifications from "./Notifications";
 import Messages from "./Messages";
@@ -15,13 +15,16 @@ export default function MenuItems() {
           display="flex"
           m={0}
           p="5px"
+          mr="10px"
           width={{ base: "15px", md: "30px" }}
           height={{ base: "15px", md: "30px" }}
           fontSize={{ base: "25px", md: "25px" }}
           variant="unstyled"
         />
       </Link>
-      <BioAvatar />
+      <SignedIn>
+        <UserButton afterSignOutUrl="/" />
+      </SignedIn>
     </HStack>
   );
 }
