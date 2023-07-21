@@ -81,16 +81,6 @@ export default function SignUpCard() {
           <FaEnvelope />
           Continue with Email
         </Button>
-
-        <Button
-          leftIcon={<FaEnvelope />}
-          px="10px"
-          size="sm"
-          iconSpacing="1"
-          colorScheme="purple"
-        >
-          <Link>Continue with Email </Link>
-        </Button>
       </CardBody>
       <CardFooter
         p="0"

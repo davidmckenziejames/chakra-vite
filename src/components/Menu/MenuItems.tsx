@@ -1,5 +1,3 @@
-import { IconButton, Avatar, Box, Flex, Link, HStack } from "@chakra-ui/react";
-import { SignedIn, SignedOut, UserButton, useClerk } from "@clerk/clerk-react";
 import BioAvatar from "./BioAvatar";
 import Notifications from "./Notifications";
 import Messages from "./Messages";
@@ -22,9 +20,6 @@ export default function MenuItems() {
           variant="unstyled"
         />
       </Link>
-      <SignedIn>
-        <UserButton afterSignOutUrl="/" />
-      </SignedIn>
     </HStack>
   );
 }

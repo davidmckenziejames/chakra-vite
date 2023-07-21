@@ -52,77 +52,144 @@ export default function Sidebar({ onClose, ...rest }) {
       {...rest}
     >
       <Flex
-        id="top-sidebar"
-        h="70%"
-        alignItems="center"
-        m="0"
-        justifyContent="flex-start"
-        flexDirection="column"
+        direction="column"
+        transition="3s ease"
+        bg="black"
+        borderRight="1px"
+        borderRightColor="gray.200"
+        w={{ base: "full", md: 60 }}
+        pos="fixed"
+        h="100%"
+        display={display}
       >
         <Flex
-          height="20"
-          w="full"
-          justifyContent="center"
-          align="center"
-          flexDirection="row"
-          px="25px"
-        >
-          <Image
-            src="https://djfan.app/wp-content/uploads/2023/07/djfan-logo-white-web.png"
-            alt="DJfan Logo"
-            width="120px"
-            py="20px"
-          />
-        </Flex>
-        <Divider />
-
-        <Flex
+          id="top-sidebar"
+          h="50%"
+          alignItems="center"
+          m="0"
+          justifyContent="flex-start"
           flexDirection="column"
-          mt="5px"
-          gap="5px"
-          color="pink"
-          w="full"
-          pl="25px"
-          pr="15px"
         >
-          <Box display={{ base: "flex", sm: "none" }} px="0px">
-            <HeaderSearch />
-          </Box>
+          <Flex
+            height="20"
+            w="full"
+            display={{ base: "none", md: "flex" }}
+            justifyContent="start"
+            align="start"
+            flexDirection="row"
+            px="25px"
+          >
+            <Image
+              src="https://djfan.app/wp-content/uploads/2023/07/djfan-logo-white-web.png"
+              alt="DJfan Logo"
+              width="100px"
+              py="20px"
+            />
+          </Flex>
+          <Flex
+            display={{ base: "flex", md: "none" }}
+            justifyContent="flex-end"
+            w="full"
+            px="3"
+            py="3"
+          >
+            <CloseButton color="white" onClick={onClose} />
+          </Flex>
+          <Divider />
+
           <Flex
             flexDirection="column"
-            gap="10px"
-            justifyContent="center"
-            pl="10px"
-            py="20px"
+            mt="5px"
+            gap="5px"
+            w="full"
+            justify="center"
+            align="center"
           >
-            {navItems.map(({ href, icon, label }) => (
-              <NavItem key={href} href={href} icon={icon}>
-                <Box fontSize="18px" ml="4px">
-                  {" "}
-                  {label}
-                </Box>
-              </NavItem>
+            <Box
+              display={{ base: "flex", md: "none" }}
+              px="25px"
+              pt={{ base: "20px", md: "0" }}
+            >
+              <HeaderSearch />
+            </Box>
+            <Flex
+              flexDirection="column"
+              mt="5"
+              w="full"
+              px="5"
+              gap="10px"
+              justifyContent="center"
+            >
+              {navItems.map((nav, index) => (
+                <Link key={index} to={nav.linkTo}>
+                  <Button
+                    leftIcon={nav.icon}
+                    minW="120px"
+                    width="100%"
+                    justifyContent="flex-start"
+                    bgColor="transparent"
+                    color="white"
+                    fontWeight="normal"
+                    _hover={{
+                      bgColor: "gray",
+                    }}
+                  >
+                    {nav.label}
+                  </Button>
+                </Link>
+              ))}
+            </Flex>
+          </Flex>
+        </Flex>
+
+        <Flex flexDirection="column" gap="10px" px="20px" height="50%">
+          <Heading color="white" fontSize="16px" fontWeight="600">
+            My Subscriptions
+          </Heading>
+          <Flex
+            direction="column"
+            gap="10px"
+            w="full"
+            maxH="250px"
+            overflowY="auto"
+          >
+            {sortedUsers.map((user, index) => (
+              <Link key={index} to="/profile">
+                <HStack mt="5px" gap="10px">
+                  <Avatar
+                    height="30px"
+                    width="30px"
+                    border="1px solid cyan"
+                    src={user.profile_picture}
+                  />
+                  \
+                  <Heading color="white" fontSize="14px" fontWeight="600">
+                    {user.display_name}
+                  </Heading>
+                  <Box
+                    position="relative"
+                    px="2"
+                    py="0.5"
+                    borderRadius="base"
+                    bgColor="blue"
+                    color="white"
+                    fontSize="sm"
+                  >
+                    <Box
+                      position="absolute"
+                      top="-0.5"
+                      right="-1"
+                      w="2"
+                      h="2"
+                      borderRadius="full"
+                      bgColor="red"
+                    />
+                  </Box>
+                </HStack>
+              </Link>
             ))}
           </Flex>
         </Flex>
-        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
-      </Flex>
-
-      <Flex
-        flexDirection="column"
-        height="30%"
-        justifyContent="flex-end"
-        pb="40px"
-        background="black"
-        px="15px"
-      >
-        <Stack spacing={{ base: "5", sm: "6" }}>
-          <SidebarUser
-            name="James Stephens"
-            image="https://tinyurl.com/yhkm2ek8"
-            account="Fan Account"
-          />
-        </Stack>
       </Flex>
     </Box>
   );

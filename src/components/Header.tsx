@@ -1,9 +1,7 @@
 import { IconButton, Flex, Box } from "@chakra-ui/react";
 
-
 import { FiMenu } from "react-icons/fi";
 import HeaderSearch from "./HeaderSearch";
-import MenuItems from "./Menu/MenuItems";
 
 export default function Header({ onOpen, ...rest }) {
   return (
@@ -41,7 +39,6 @@ export default function Header({ onOpen, ...rest }) {
         <Box display={{ base: "none", sm: "flex" }}>
           <HeaderSearch />
         </Box>
-        <MenuItems />
       </Flex>
     </Flex>
   );

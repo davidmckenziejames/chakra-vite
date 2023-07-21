@@ -1,40 +1,19 @@
 import {
   Box,
-  Button,
   Card,
   CardHeader,
   CardBody,
   Flex,
-  HStack,
   List,
   ListIcon,
   ListItem,
-  Tooltip,
   Text,
-  VStack,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
   CardFooter,
   Heading,
-  IconButton,
 } from "@chakra-ui/react";
 
 import React, { useState } from "react";
-import {
-  FaCheckCircle,
-  FaTimesCircle,
-  FaArrowRight,
-  FaSmile,
-  FaRegSmileBeam,
-  FaSmileBeam,
-  FaRegSmile,
-  FaPlus,
-  FaCheck,
-  FaInfoCircle,
-} from "react-icons/fa";
+import { FaCheckCircle, FaArrowRight, FaCheck } from "react-icons/fa";
 
 export default function VIPMembership() {
   const [isHovered, setIsHovered] = useState(false);
@@ -104,60 +83,24 @@ export default function VIPMembership() {
           flexDirection="column"
           alignContent="center"
           p="0"
-          width="100%"
           pb="25px"
         >
           <Text color="#8553f4" pb="10px" textAlign="center" fontWeight="600">
             <i>What you get?</i>
           </Text>
-          <Accordion allowToggle width="100%" borderWidth="0">
+          <List spacing={4} w="100%">
             {items.map((item) => (
-              <AccordionItem
+              <ListItem
                 key={item}
                 display="flex"
+                flexDirection="row"
                 alignItems="center"
-                justifyContent="center"
-                borderWidth="0"
-                flexDirection="column"
-                borderColor="#fff"
-                _hover={{
-                  bg: "#dcffe5",
-                  borderWidth: "1px",
-                  borderColor: "gray.300",
-                }}
               >
-                <AccordionButton
-                  display="flex"
-                  py="10px"
-                  alignItems="center"
-                  gap="10px"
-                  w="300px"
-                  _hover={{ bg: "unset" }}
-                >
-                  <Box
-                    display="flex"
-                    as={FaCheckCircle}
-                    color="#22F07E"
-                    fontSize="18px"
-                  />
-                  {item}
-                  <AccordionIcon
-                    as={FaInfoCircle}
-                    color="gray.300"
-                    fontSize="16px"
-                    position="absolute"
-                    right="25px"
-                  />
-                </AccordionButton>
-                <AccordionPanel pb={4} bg="white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
+                <ListIcon as={FaCheckCircle} color="#22F07E" />
+                {item}
+              </ListItem>
             ))}
-          </Accordion>
+          </List>
         </CardBody>
 
         <CardFooter
@@ -182,7 +125,7 @@ export default function VIPMembership() {
             gap="10px"
             fontSize={{ base: "20px", md: "22px" }}
           >
-            START $1 TRIAL
+            SELECT PLAN
             <Box fontSize={{ base: "14px", md: "16px" }}>
               <Box as={isHovered ? FaCheck : FaArrowRight} />
             </Box>

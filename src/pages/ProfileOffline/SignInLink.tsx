@@ -1,6 +1,5 @@
 import {
-  Box,
-  Flex,
+
   Link,
   Text,
   Modal,

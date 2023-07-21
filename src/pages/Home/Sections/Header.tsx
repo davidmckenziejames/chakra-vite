@@ -14,7 +14,6 @@ import React from "react";
 
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
@@ -39,7 +38,6 @@ export default function Header() {
       <Flex id="navbar" maxW="1024px" w="100%">
         <Flex justify="flex-start" w="30%">
           <SignInButton />
-        
         </Flex>
         <Flex justify="center" w="40%" align="center">
           <Image

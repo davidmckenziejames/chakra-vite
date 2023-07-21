@@ -13,7 +13,7 @@ import RegisterModal from "../Home/Sections/HeaderComponents/RegisterModal";
 import { FaHeadphones, FaUnlock } from "react-icons/fa";
 const avatarSizes = { base: "35px", md: "35px" };
 
-export default function StickyFooter() {
+export default function FloatingFooter() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isVisible, setVisible] = useState(false);
 

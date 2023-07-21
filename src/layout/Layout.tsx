@@ -1,9 +1,10 @@
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
+import { ReactNode } from "react";
 import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg="white" width="100%">

@@ -46,7 +46,7 @@ export default function LoginPage() {
             <Button variant="primary">Sign in</Button>
             <Button
               variant="secondary"
-              leftIcon={<FaGoogle boxSize="5" />}
+              leftIcon={<FaGoogle  />}
               iconSpacing="3"
             >
               Sign in with Google

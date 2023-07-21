@@ -12,7 +12,7 @@ import ProfileBio from "./ProfileBio";
 import ProfileEvents from "./ProfileEvents";
 import ProfileProducts from "./ProfileProducts";
 import ProfileAudio from "./ProfileAudio";
-import ProfileMembership from "./ProfileMembership";
+import ProfileMembership from "./Membership/ProfileMembership";
 import {
   FaHome,
   FaUser,
@@ -137,7 +137,7 @@ export default function ProfileMenu() {
           <TabPanel>
             <ProfileProducts />
           </TabPanel>
-          <TabPanel>
+          <TabPanel p="0">
             <ProfileMembership />
           </TabPanel>
         </TabPanels>
