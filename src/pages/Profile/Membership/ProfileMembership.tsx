@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import GoldMembership from "./GoldMembership";
 import VIPMembership from "./VIPMembership";
-import VIPoffer from "./VIPoffer";
+////import VIPoffer from "./VIPoffer";
 
 export default function ProfileMembership() {
   return (
@@ -25,15 +25,13 @@ export default function ProfileMembership() {
       p="0"
       m="0"
       gap="20px"
-      pb="50px"
+      pb="80px"
     >
-      <VIPoffer />
-
       <Flex
         mt="40px"
         display={{ base: "none", md: "flex" }}
         width={{ base: "100%", md: "100%" }}
-        gap="50px"
+        gap="80px"
         justifyContent="center"
       >
         <GoldMembership />

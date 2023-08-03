@@ -11,6 +11,8 @@ import Feed from "./pages/Profile/Feed";
 import ProfileOffline from "./pages/ProfileOffline/ProfileOffline";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import "./index.css";
+import LoginPage from "./pages/Auth/LoginPage";
+import MagicLink from "./pages/Auth/MagicLink";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Explore from "./pages/Explore/Explore";
 import theme from "./theme";
@@ -34,6 +36,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/profile-loggedout" element={<ProfileOffline />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/checkinbox" element={<MagicLink />} />
         </Routes>
       </Router>
     </ChakraProvider>

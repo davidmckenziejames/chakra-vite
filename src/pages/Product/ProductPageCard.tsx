@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import {
-  Avatar,
   Flex,
   Box,
   Card,
@@ -8,18 +7,13 @@ import {
   CardBody,
   CardFooter,
   Text,
-  IconButton,
   Heading,
   Button,
   Image,
-  AvatarBadge,
   Menu,
   MenuButton,
-  Link,
   MenuItem,
   MenuList,
-  HStack,
-  Tag,
 } from "@chakra-ui/react";
 import { BiLike, BiTrash } from "react-icons/bi";
 import { FiShare, FiMoreVertical } from "react-icons/fi";
@@ -81,7 +75,7 @@ export default function ProductPageCard() {
       w={{ base: "90%", sm: "450px" }}
       bg="black"
     >
-      <CardHeader p="0" align="center">
+      <CardHeader p="0" alignItems="center">
         <Image
           w="100%"
           src="https://djfan.app/wp-content/uploads/2023/05/Emerald-Beats-Vol.1-LINE-e9642cb250b92a5f75bd32f275fe1e1d-1.jpg"
@@ -111,19 +105,19 @@ export default function ProductPageCard() {
       <CardBody p="0">
         <Flex mt="5px" align="center" direction="column" w="100%" pb="15px">
           <Heading mt="-15px" fontSize="24px" px="10px" color="white">
-            Paradise Ibiza
+            Song / Product Name
           </Heading>
           <Heading
             fontSize="18px"
-            pt="5px"
+            py="5px"
             as="span"
             color="white"
             fontWeight="500"
           >
-            <Box as="span" color="cyan">
+            <Box as="span" color="cyan" pr="2px">
               by{" "}
             </Box>
-            Richy Ahmed
+            Artist Name
           </Heading>
         </Flex>
         <AudioPlayer
@@ -132,7 +126,7 @@ export default function ProductPageCard() {
           // other props here
         />
       </CardBody>
-      <CardFooter p="0" pt="10px" pb="20px">
+      <CardFooter p="0" pt="20px" pb="30px">
         <Flex mt="5px" align="center" direction="column" w="100%">
           <Heading fontSize="16px" px="10px" color="white">
             Digital Download
@@ -148,7 +142,7 @@ export default function ProductPageCard() {
               variant="solid"
               colorScheme="purple"
             >
-              Add to Basket
+              Purchase Now
             </Button>
           </Box>
         </Flex>

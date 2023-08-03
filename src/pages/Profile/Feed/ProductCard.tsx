@@ -1,27 +1,20 @@
 import {
-  Avatar,
   Flex,
   Box,
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Text,
-  IconButton,
   Heading,
   Button,
   Image,
-  AvatarBadge,
   Menu,
   MenuButton,
-  Link,
   MenuItem,
   MenuList,
-  HStack,
-  Tag,
 } from "@chakra-ui/react";
-import { BiLike, BiChat, BiShare, BiEdit, BiTrash } from "react-icons/bi";
-import { FiShare, FiEye, FiMoreVertical } from "react-icons/fi";
+import { BiLike, BiTrash } from "react-icons/bi";
+import { FiShare, FiMoreVertical } from "react-icons/fi";
 
 type PostMenuProps = {
   icon: React.ElementType;
@@ -44,7 +37,13 @@ export default function ProductCard() {
       w="350px"
       bg="black"
     >
-      <CardHeader p="0" align="center">
+      <CardHeader
+        display="flex"
+        flexDir="column"
+        pb="30px"
+        pt="5px"
+        alignItems="center"
+      >
         <Image
           w="60%"
           pt="20px"
@@ -52,7 +51,14 @@ export default function ProductCard() {
           alt="DJ"
         />
 
-        <Flex justify="flex-end" px="5px" pt="10px">
+        <Flex
+          justify="flex-end"
+          px="5px"
+          pt="10px"
+          position="absolute"
+          right="5px"
+          top="0px"
+        >
           <Menu>
             <MenuButton transition="all 0.3s" _focus={{ boxShadow: "none" }}>
               <Box as={FiMoreVertical} size="20px" color="lightgray" />
