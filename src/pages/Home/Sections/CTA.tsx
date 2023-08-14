@@ -31,7 +31,7 @@ export default function Features() {
             textAlign="center"
             lineHeight="1.2em"
           >
-            Discover hidden gems, unlock exlusive content & events, meet DJs,
+            Discover hidden gems, unlock exclusive content & events, meet DJs,
             and join a community that shares your passion.
           </Heading>
           <CreateAccount />

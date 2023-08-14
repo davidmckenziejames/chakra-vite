@@ -1,5 +1,21 @@
-import { Avatar, Box, Button, Flex, Stack, Icon, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Button,
+  Flex,
+  Stack,
+  Icon,
+  Text,
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList,
+  Heading,
+  VStack,
+} from "@chakra-ui/react";
 import { FiUnlock, FiUser, FiHeadphones } from "react-icons/fi";
+import { FaCheck, FaCheckCircle } from "react-icons/fa";
 
 export default function ProfileHeader() {
   const avatarSizes = { base: "100px", sm: "150px" };
@@ -44,7 +60,7 @@ export default function ProfileHeader() {
               iconSpacing="1"
               colorScheme="purple"
             >
-              Unlock All Posts
+              Unlock All-A Posts
             </Button>
             <Button
               leftIcon={<FiUser />}
@@ -58,6 +74,26 @@ export default function ProfileHeader() {
             </Button>
           </Flex>
         </Stack>
+      </Flex>
+      <Flex bg="black" color="white">
+        <VStack>
+          <Heading>Unlock VIP content & Join inner-circle for $1 </Heading>
+          <Text>What's in it for me?</Text>
+          <List spacing={3}>
+            <ListItem>
+              <ListIcon as={FaCheckCircle} color="green.500" />
+              Exclusive songs, mixes, videos posted only
+            </ListItem>
+            <ListItem>
+              <ListIcon as={FaCheckCircle} color="green.500" />
+              Guestlist, VIP, & backstage invites to my tour dates.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={FaCheckCircle} color="green.500" />
+              Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+            </ListItem>
+          </List>
+        </VStack>
       </Flex>
     </Box>
   );
