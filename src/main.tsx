@@ -11,7 +11,7 @@ import Feed from "./pages/Profile/Feed";
 import ProfileOffline from "./pages/ProfileOffline/ProfileOffline";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import "./index.css";
-import LoginPage from "./pages/Auth/LoginPage";
+import Signin from "./pages/Auth/LoginPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Explore from "./pages/Explore/Explore";
 import Purchases from "./pages/Purchases/Purchases";
@@ -21,6 +21,7 @@ import "@fontsource/chakra-petch/400.css";
 import "@fontsource/chakra-petch/500.css";
 import "@fontsource/chakra-petch/600.css";
 import "@fontsource/chakra-petch/700.css";
+import Privacy from "./pages/Legal/Privacy";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -36,8 +37,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/profile-loggedout" element={<ProfileOffline />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<Signin />} />
           <Route path="/purchases" element={<Purchases />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </Router>
     </ChakraProvider>

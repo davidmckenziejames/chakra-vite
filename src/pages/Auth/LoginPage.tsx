@@ -1,28 +1,82 @@
+"use client";
 import {
   Button,
+  Box,
+  AbsoluteCenter,
   Image,
   Flex,
   FormControl,
   FormLabel,
   Heading,
-  HStack,
   Input,
   Stack,
   Text,
   useBreakpointValue,
+  InputGroup,
+  InputRightElement,
+  Divider,
 } from "@chakra-ui/react";
-import { FaApple, FaArrowRight, FaFacebookF, FaGoogle } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaGoogle,
+  FaMagic,
+  FaEye,
+  FaEyeSlash,
+} from "react-icons/fa";
+import { useState } from "react";
 
-export default function LoginPage() {
+export default function Signin() {
+  const [email, setEmail] = useState("");
+  const [emailCreds, setEmailCreds] = useState("");
+  const [passwordCreds, setPasswordCreds] = useState("");
+  const [showPasswordInput, setShowPasswordInput] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <Flex
       w="100%"
       minH="100vh"
+      pt={{ base: "150px", md: "180px" }}
       justifyContent="center"
-      alignItems="center"
       bg="#111111"
+      position="relative"
     >
-      <Stack spacing="4" color="white">
+      <Flex
+        w="full"
+        maxW="1200px"
+        gap="10px"
+        py="30px"
+        pr="30px"
+        pos="absolute"
+        justifyContent="flex-end"
+        alignItems="center"
+        top="0px"
+      >
+        <Text fontSize="14px" color="#fff">
+          New to DJfan?
+        </Text>
+        <Button
+          bg="white"
+          borderRadius="5px"
+          as="a"
+          href="https://auth.djfan.app/api/auth/signup"
+          target="_blank"
+          fontSize="14px"
+          lineHeight="1em"
+          fontWeight="800"
+          color="#111111"
+          transition="all 0.3s ease"
+          px="10px"
+          height="30px"
+          _hover={{
+            bg: "#be04f1",
+            color: "#fff",
+          }}
+        >
+          SIGN UP
+        </Button>
+      </Flex>
+      <Stack spacing="6" color="white">
         <Stack
           spacing={{ base: "4", md: "4" }}
           textAlign="center"
@@ -37,74 +91,180 @@ export default function LoginPage() {
             px="20px"
             fontSize={useBreakpointValue({ base: "20px", md: "20px" })}
           >
-            Log in to your account
+            Sign in to your account
           </Heading>
         </Stack>
+
         <Stack spacing="2">
           <Button
             color="white"
             bg="black"
-            _hover={{ color: "#ffffff", bg: "#000000" }}
+            _hover={{ color: "#111", bg: "#fff" }}
             border="1px solid #ffffff"
             leftIcon={<FaGoogle />}
             iconSpacing="3"
           >
             Sign in with Google
           </Button>
-          <Button
-            color="white"
-            bg="black"
-            _hover={{ color: "#ffffff", bg: "#000000" }}
-            border="1px solid #ffffff"
-            leftIcon={<FaApple />}
-            iconSpacing="3"
-          >
-            Sign in with Apple
-          </Button>
-          <Button
-            color="white"
-            bg="black"
-            _hover={{ color: "#ffffff", bg: "#000000" }}
-            border="1px solid #ffffff"
-            leftIcon={<FaFacebookF />}
-            iconSpacing="3"
-          >
-            Sign in with Facebook
-          </Button>
         </Stack>
-        <Stack spacing="4">
-          <Stack spacing="5">
-            <FormControl>
-              <FormLabel htmlFor="email">Sign in with email</FormLabel>
-              <Input
-                id="email"
-                placeholder="e.g. daftpunk@gmail.com"
-                type="email"
-                fontSize="18px"
-                lineHeight="2em"
-                _focus={{ border: "2px solid #00f5d4" }}
-              />
-            </FormControl>
-          </Stack>
+        <Box position="relative" mt="5px">
+          <Divider />
+          <AbsoluteCenter
+            fontSize="14px"
+            bg="#111111"
+            w="60%"
+            textAlign={"center"}
+          >
+            or continue with email
+          </AbsoluteCenter>
+        </Box>
 
-          <Stack spacing="4">
-            <Button
-              rightIcon={<FaArrowRight />}
-              color="white"
-              bg="#be04f1"
-              _hover={{ color: "#be04f1", bg: "#ffffff" }}
-            >
-              Sign in
-            </Button>
-            <HStack spacing="1" justify="center">
-              <Text fontSize="sm" color="muted">
-                Don't have an account?
-              </Text>
-              <Button variant="link" color="#00f5d4" size="sm">
-                Sign up
+        <Stack w="300px">
+          {showPasswordInput ? (
+            <Stack spacing="10px">
+              <FormControl>
+                <FormLabel htmlFor="email-cred" fontSize="14px">
+                  Email Address
+                </FormLabel>
+                <Input
+                  mt="0px"
+                  name="email-cred"
+                  placeholder="e.g. daftpunk@gmail.com"
+                  type="email"
+                  fontSize="14px"
+                  lineHeight="1em"
+                  _focus={{ border: "2px solid #00f5d4" }}
+                  value={emailCreds}
+                  onChange={(e) => setEmailCreds(e.target.value)}
+                />
+              </FormControl>
+              <FormControl pb="0px">
+                <FormLabel htmlFor="password-cred" fontSize="14px">
+                  Password
+                </FormLabel>
+                <InputGroup>
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    name="password-cred"
+                    placeholder="*********"
+                    fontSize="14px"
+                    lineHeight="1em"
+                    pr="4.5rem"
+                    _focus={{ border: "2px solid #00f5d4" }}
+                    value={passwordCreds}
+                    onChange={(e) => setPasswordCreds(e.target.value)}
+                  />
+                  <InputRightElement h={"full"}>
+                    <Box
+                      cursor="pointer"
+                      onClick={() =>
+                        setShowPassword((showPassword) => !showPassword)
+                      }
+                    >
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
+                    </Box>
+                  </InputRightElement>
+                </InputGroup>
+              </FormControl>
+              <Button
+                rightIcon={<FaArrowRight />}
+                color="white"
+                bg="#be04f1"
+                _hover={{ color: "#be04f1", bg: "#ffffff" }}
+              >
+                Sign in
               </Button>
-            </HStack>
-          </Stack>
+            </Stack>
+          ) : (
+            <Stack spacing="10px">
+              <FormControl>
+                <Input
+                  id="csrfToken"
+                  //defaultValue={csrfToken}
+                  hidden
+                />
+                <FormLabel htmlFor="email" fontWeight="500" fontSize="14px">
+                  Email Address
+                </FormLabel>
+                <Input
+                  id="email"
+                  placeholder="e.g. daftpunk@gmail.com"
+                  type="email"
+                  fontSize="14px"
+                  lineHeight="1em"
+                  _focus={{ border: "2px solid #00f5d4" }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormControl>
+              <Button
+                rightIcon={<FaArrowRight />}
+                color="white"
+                bg="#be04f1"
+                _hover={{ color: "#be04f1", bg: "#ffffff" }}
+                onClick={() => {
+                  // signIn("email", { email, csrfToken });
+                }}
+              >
+                Send me a login link
+              </Button>
+            </Stack>
+          )}
+
+          <Flex
+            w="100%"
+            onClick={() => {
+              setShowPasswordInput((prev) => !prev); // toggle the mode
+              if (showPasswordInput) {
+                setEmail(emailCreds); // copy emailCreds to email
+              } else {
+                setEmailCreds(email); // copy email to emailCreds
+              }
+            }}
+          >
+            {showPasswordInput ? (
+              <Text
+                fontSize="12px"
+                w="100%"
+                mt="10px"
+                fontWeight="500"
+                cursor="pointer"
+                color="#ffffff"
+                display="flex"
+                justifyContent="center"
+                gap="6px"
+                alignItems="center"
+                _hover={{ textDecoration: "underline", color: "#58faea" }}
+              >
+                <FaMagic color="#fff" />
+                Email me a one-click login link
+              </Text>
+            ) : (
+              <Text
+                bg="#2d2d2d"
+                borderRadius="10px"
+                border="1px solid #58faea"
+                p="10px"
+                fontSize="12px"
+                textAlign="center"
+                w="100%"
+                mt="10px"
+              >
+                We’ll email you a magic link for a one-click sign in. Or you can{" "}
+                {""}
+                <Text
+                  as="span"
+                  fontWeight="600"
+                  cursor="pointer"
+                  color="#58faea"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  sign in with password
+                </Text>
+                {""} instead.
+              </Text>
+            )}
+          </Flex>
         </Stack>
       </Stack>
     </Flex>
