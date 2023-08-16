@@ -1,4 +1,3 @@
-"use client";
 import {
   Button,
   Box,
@@ -36,7 +35,7 @@ export default function Signin() {
     <Flex
       w="100%"
       minH="100vh"
-      pt={{ base: "150px", md: "180px" }}
+      pt={{ base: "120px", md: "180px" }}
       justifyContent="center"
       bg="#111111"
       position="relative"
@@ -45,8 +44,8 @@ export default function Signin() {
         w="full"
         maxW="1200px"
         gap="10px"
-        py="30px"
-        pr="30px"
+        py={{ base: "20px", md: "30px" }}
+        px={{ base: "20px", md: "30px" }}
         pos="absolute"
         justifyContent="flex-end"
         alignItems="center"
@@ -76,7 +75,7 @@ export default function Signin() {
           SIGN UP
         </Button>
       </Flex>
-      <Stack spacing="6" color="white">
+      <Stack spacing="6" color="white" w={{ base: "80%", md: "unset" }}>
         <Stack
           spacing={{ base: "4", md: "4" }}
           textAlign="center"
@@ -119,7 +118,7 @@ export default function Signin() {
           </AbsoluteCenter>
         </Box>
 
-        <Stack w="300px">
+        <Stack w={{ base: "100%", md: "300px" }}>
           {showPasswordInput ? (
             <Stack spacing="10px">
               <FormControl>
@@ -131,7 +130,7 @@ export default function Signin() {
                   name="email-cred"
                   placeholder="e.g. daftpunk@gmail.com"
                   type="email"
-                  fontSize="14px"
+                  fontSize="16px"
                   lineHeight="1em"
                   _focus={{ border: "2px solid #00f5d4" }}
                   value={emailCreds}
@@ -147,7 +146,7 @@ export default function Signin() {
                     type={showPassword ? "text" : "password"}
                     name="password-cred"
                     placeholder="*********"
-                    fontSize="14px"
+                    fontSize="16px"
                     lineHeight="1em"
                     pr="4.5rem"
                     _focus={{ border: "2px solid #00f5d4" }}
@@ -187,10 +186,9 @@ export default function Signin() {
                   Email Address
                 </FormLabel>
                 <Input
-                  id="email"
                   placeholder="e.g. daftpunk@gmail.com"
                   type="email"
-                  fontSize="14px"
+                  fontSize="16px"
                   lineHeight="1em"
                   _focus={{ border: "2px solid #00f5d4" }}
                   value={email}
@@ -210,7 +208,6 @@ export default function Signin() {
               </Button>
             </Stack>
           )}
-
           <Flex
             w="100%"
             onClick={() => {
@@ -237,7 +234,7 @@ export default function Signin() {
                 _hover={{ textDecoration: "underline", color: "#58faea" }}
               >
                 <FaMagic color="#fff" />
-                Email me a one-click login link
+                Forgot password? Email me a login link
               </Text>
             ) : (
               <Text

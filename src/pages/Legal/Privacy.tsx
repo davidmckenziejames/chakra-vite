@@ -1,5 +1,14 @@
-"use client";
-import { Flex, Box } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Center,
+  Heading,
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList,
+} from "@chakra-ui/react";
 import Header from "../Home/Sections/Header";
 import Footer from "../Home/Sections/Footer";
 
@@ -15,9 +24,9 @@ export default function Privacy() {
           py="30px"
           mx="15px"
         >
-          <p style={{ fontSize: "24px" }}>
+          <h1 style={{ fontSize: "24px" }}>
             <strong>PRIVACY POLICY</strong>
-          </p>
+          </h1>
           <p>
             <strong>Last updated May 24, 2023</strong>
           </p>
@@ -30,16 +39,16 @@ export default function Privacy() {
             services (‘
             <strong>Services</strong>‘), such as when you:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               Visit our website at djfan.app, or any website of ours that links
               to this privacy notice
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               Engage with us in other related ways, including any sales,
               marketing, or events
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <p>
             <strong>Questions or concerns?&nbsp;</strong>Reading this privacy
             notice will help you understand your privacy rights and choices. If
@@ -260,15 +269,15 @@ export default function Privacy() {
             products and features you use. The personal information we collect
             may include the following:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>names</li>
-            <li>phone numbers</li>
-            <li>email addresses</li>
-            <li>usernames</li>
-            <li>passwords</li>
-            <li>contact preferences</li>
-            <li>billing addresses</li>
-          </ul>
+          <UnorderedList>
+            <ListItem>names</ListItem>
+            <ListItem>phone numbers</ListItem>
+            <ListItem>email addresses</ListItem>
+            <ListItem>usernames</ListItem>
+            <ListItem>passwords</ListItem>
+            <ListItem>contact preferences</ListItem>
+            <ListItem>billing addresses</ListItem>
+          </UnorderedList>
           <p>
             <strong>Sensitive Information.</strong> We do not process sensitive
             information.
@@ -326,8 +335,8 @@ export default function Privacy() {
             and similar technologies.
           </p>
           <p>The information we collect includes:</p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               Log and Usage Data. Log and usage data is service-related,
               diagnostic, usage, and performance information our servers
               automatically collect when you access or use our Services and
@@ -339,8 +348,8 @@ export default function Privacy() {
               you take such as which features you use), device event information
               (such as system activity, error reports (sometimes called ‘crash
               dumps’), and hardware settings).
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               Location Data. We collect location data such as information about
               your device’s location, which can be either precise or imprecise.
               How much information we collect depends on the type and settings
@@ -351,8 +360,8 @@ export default function Privacy() {
               refusing access to the information or by disabling your Location
               setting on your device. However, if you choose to opt out, you may
               not be able to use certain aspects of the Services.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <p>
             <strong>2. HOW DO WE PROCESS YOUR INFORMATION?</strong>
           </p>
@@ -368,39 +377,39 @@ export default function Privacy() {
               depending on how you interact with our Services, including:
             </strong>
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               <strong>
                 To facilitate account creation and authentication and otherwise
                 manage user accounts.&nbsp;
               </strong>
               We may process your information so you can create and log in to
               your account, as well as keep your account in working order.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <strong>
                 To deliver and facilitate delivery of services to the
                 user.&nbsp;
               </strong>
               We may process your information to provide you with the requested
               service.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <strong>
                 To respond to user inquiries/offer support to users.&nbsp;
               </strong>
               We may process your information to respond to your inquiries and
               solve any potential issues you might have with the requested
               service.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <strong>
                 To save or protect an individual’s vital interest.
               </strong>{" "}
               We may process your information when necessary to save or protect
               an individual’s vital interest, such as to prevent harm.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <p>
             <strong>
               3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?
@@ -425,8 +434,8 @@ export default function Privacy() {
             personal information. As such, we may rely on the following legal
             bases to process your personal information:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               <strong>Consent.&nbsp;</strong>We may process your information if
               you have given us permission (i.e. consent) to use your personal
               information for a specific purpose. You can withdraw your consent
@@ -438,28 +447,28 @@ export default function Privacy() {
                 withdrawing your consent
               </a>
               .
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <strong>Performance of a Contract.</strong> We may process your
               personal information when we believe it is necessary to fulfil our
               contractual obligations to you, including providing our Services
               or at your request prior to entering into a contract with you.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <strong>Legal Obligations.</strong> We may process your
               information where we believe it is necessary for compliance with
               our legal obligations, such as to cooperate with a law enforcement
               body or regulatory agency, exercise or defend our legal rights, or
               disclose your information as evidence in litigation in which we
               are involved.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <strong>Vital Interests.</strong> We may process your information
               where we believe it is necessary to protect your vital interests
               or the vital interests of a third party, such as situations
               involving potential threats to the safety of any person.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <p>
             <strong>
               4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
@@ -474,14 +483,14 @@ export default function Privacy() {
             We may need to share your personal information in the following
             situations:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               <strong>Business Transfers.</strong> We may share or transfer your
               information in connection with, or during negotiations of, any
               merger, sale of company assets, financing, or acquisition of all
               or a portion of our business to another company.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <p>
             <strong>
               5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
@@ -691,11 +700,11 @@ export default function Privacy() {
             If you would at any time like to review or change the information in
             your account or terminate your account, you can:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               Log in to your account settings and update your user account.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <p>
             Upon your request to terminate your account, we will deactivate or
             delete your account and information from our active databases.
@@ -909,22 +918,28 @@ export default function Privacy() {
             We will use and retain the collected personal information as needed
             to provide the Services or for:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>Category A – As long as the user has an account with us</li>
-          </ul>
+          <UnorderedList>
+            <ListItem>
+              Category A – As long as the user has an account with us
+            </ListItem>
+          </UnorderedList>
           <p>
             We may also collect other personal information outside of these
             categories through instances where you interact with us in person,
             online, or by phone or mail in the context of:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>Receiving help through our customer support channels;</li>
-            <li>Participation in customer surveys or contests; and</li>
-            <li>
+          <UnorderedList>
+            <ListItem>
+              Receiving help through our customer support channels;
+            </ListItem>
+            <ListItem>
+              Participation in customer surveys or contests; and
+            </ListItem>
+            <ListItem>
               Facilitation in the delivery of our Services and to respond to
               your inquiries.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <p>
             <strong>&nbsp;</strong>
           </p>
@@ -983,32 +998,36 @@ export default function Privacy() {
           </p>
           <p>Right to be informed — Request to know</p>
           <p>Depending on the circumstances, you have a right to know:</p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>whether we collect and use your personal information;</li>
-            <li>the categories of personal information that we collect;</li>
-            <li>
+          <UnorderedList>
+            <ListItem>
+              whether we collect and use your personal information;
+            </ListItem>
+            <ListItem>
+              the categories of personal information that we collect;
+            </ListItem>
+            <ListItem>
               the purposes for which the collected personal information is used;
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               whether we sell or share personal information to third parties;
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               the categories of personal information that we sold, shared, or
               disclosed for a business purpose;
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               the categories of third parties to whom the personal information
               was sold, shared, or disclosed for a business purpose;
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               the business or commercial purpose for collecting, selling, or
               sharing personal information; and
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               the specific pieces of personal information we collected about
               you.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <div>&nbsp;</div>
           <p>
             In accordance with applicable law, we are not obligated to provide
@@ -1054,29 +1073,29 @@ export default function Privacy() {
             soon as we finish verifying you.
           </p>
           <p>Other privacy rights</p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               You may object to the processing of your personal information.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               You may request correction of your personal data if it is
               incorrect or no longer relevant, or ask to restrict the processing
               of the information.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               You can designate an authorised agent to make a request under the
               CCPA on your behalf. We may deny a request from an authorised
               agent that does not submit proof that they have been validly
               authorised to act on your behalf in accordance with the CCPA.
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               You may request to opt out from future selling or sharing of your
               personal information to third parties. Upon receiving an opt-out
               request, we will act upon the request as soon as feasibly
               possible, but no later than fifteen (15) days from the date of the
               request submission.
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <div>&nbsp;</div>
           <p>
             To exercise these rights, you can contact us&nbsp;by email
@@ -1123,44 +1142,46 @@ export default function Privacy() {
             depending on how you interact with DJfan Ltd and our Services. To
             find out more, please visit the following links:
           </p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               <a color="#260078" href="https://djfan.app/privacy/#infocollect">
                 Personal data we collect
               </a>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <a color="#260078" href="https://djfan.app/privacy/#infouse">
                 How we use your personal data
               </a>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <a color="#260078" href="https://djfan.app/privacy/#whoshare">
                 When and with whom we share your personal data
               </a>
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <div>&nbsp;</div>
           <p>Your rights with respect to your personal data</p>
-          <ul style={{ paddingLeft: "20px", paddingRight: "10px" }}>
-            <li>
+          <UnorderedList>
+            <ListItem>
               Right to be informed whether or not we are processing your
               personal data
-            </li>
-            <li>Right to access your personal data</li>
-            <li>Right to correct inaccuracies in your personal data</li>
-            <li>Right to request deletion of your personal data</li>
-            <li>
+            </ListItem>
+            <ListItem>Right to access your personal data</ListItem>
+            <ListItem>
+              Right to correct inaccuracies in your personal data
+            </ListItem>
+            <ListItem>Right to request deletion of your personal data</ListItem>
+            <ListItem>
               Right to obtain a copy of the personal data you previously shared
               with us
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               Right to opt out of the processing of your personal data if it is
               used for targeted advertising, the sale of personal data, or
               profiling in furtherance of decisions that produce legal or
               similarly significant effects (‘profiling’)
-            </li>
-          </ul>
+            </ListItem>
+          </UnorderedList>
           <div>&nbsp;</div>
           <p>
             DJfan Ltd has not sold any personal data to third parties for

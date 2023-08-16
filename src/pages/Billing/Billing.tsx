@@ -23,8 +23,9 @@ import DownloadCard from "./DownloadCard";
 import Download2 from "./Download2";
 import Header from "../Home/Sections/Header";
 import Subscriptions from "./Subscriptions";
+import SubCards from "./SubCards";
 
-export default function Purchases() {
+export default function Billing() {
   return (
     <Flex w="100%" flexDir={"column"} justifyContent="center">
       <Header />
@@ -38,7 +39,9 @@ export default function Purchases() {
           <Box bg="gray.100" px="10px" py="10px" mb="10px">
             <TabList>
               <Tab>Purchases</Tab>
-              <Tab>Subscriptions</Tab>
+
+              <Tab>Memberships</Tab>
+              <Tab>Billing History</Tab>
             </TabList>
           </Box>
           <TabPanels>
@@ -46,15 +49,21 @@ export default function Purchases() {
               <HStack
                 justifyContent={"center"}
                 maxW="1000px"
-                gap="20px"
+                gap="30px"
                 wrap={"wrap"}
               >
                 <DownloadCard />
                 <Download2 />
               </HStack>
             </TabPanel>
+
             <TabPanel>
-              <Subscriptions />
+              <SubCards />
+            </TabPanel>
+            <TabPanel>
+              <Flex maxW="1000px">
+                <Subscriptions />
+              </Flex>
             </TabPanel>
           </TabPanels>
         </Tabs>

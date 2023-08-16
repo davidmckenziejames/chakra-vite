@@ -14,7 +14,7 @@ import "./index.css";
 import Signin from "./pages/Auth/LoginPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Explore from "./pages/Explore/Explore";
-import Purchases from "./pages/Purchases/Purchases";
+import Billing from "./pages/Billing/Billing";
 import theme from "./theme";
 import "@fontsource/chakra-petch/300.css";
 import "@fontsource/chakra-petch/400.css";
@@ -22,7 +22,9 @@ import "@fontsource/chakra-petch/500.css";
 import "@fontsource/chakra-petch/600.css";
 import "@fontsource/chakra-petch/700.css";
 import Privacy from "./pages/Legal/Privacy";
-
+import Terms from "./pages/Legal/Terms";
+import Blog from "./Blog";
+import Cookies from "./pages/Legal/Cookies";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
@@ -38,8 +40,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/feed" element={<Feed />} />
           <Route path="/profile-loggedout" element={<ProfileOffline />} />
           <Route path="/login" element={<Signin />} />
-          <Route path="/purchases" element={<Purchases />} />
+          <Route path="/billing" element={<Billing />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </Router>
     </ChakraProvider>

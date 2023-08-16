@@ -1,5 +1,6 @@
 import {
   Flex,
+  Button,
   Table,
   TableContainer,
   Tbody,
@@ -10,8 +11,10 @@ import {
   Link,
   Tr,
 } from "@chakra-ui/react";
-import { FaGem } from "react-icons/fa";
-import ManageButton from "./ManageButton";
+import { FaGem, FaHeart, FaMusic, FaRegHeart } from "react-icons/fa";
+import ManageButton from "./components/ManageButton";
+import ViewProduct from "./components/ViewProduct";
+import ManageButtonTable from "./components/ManageButtonTable";
 
 export default function Subscriptions() {
   return (
@@ -23,19 +26,22 @@ export default function Subscriptions() {
         border="1px solid gray"
         flex="1"
         overflowY="auto"
+        fontSize="16px"
       >
         <Table variant="simple" overflow="auto" maxH="calc(100vh - 260px)">
           <Thead position="sticky" top="0" color="#fff" bg="black">
             <Tr>
+              <Th color={"white"}>Details</Th>
               <Th color={"white"}>Creator</Th>
-              <Th color={"white"}>Started</Th>
+              <Th color={"white"}>Date</Th>
               <Th color={"white"}>Amount</Th>
-              <Th color={"white"}>Level</Th>
+              <Th color={"white"}>Type</Th>
               <Th color={"white"}>Actions</Th>
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
+              <Td>VIP Membership</Td>
               <Td>
                 <Link href="/" fontWeight={"600"}>
                   DJ Exotic
@@ -45,23 +51,23 @@ export default function Subscriptions() {
               <Td>$5.00</Td>
               <Td>
                 <Text
-                  color="#fff"
-                  textAlign={"center"}
-                  py="4px"
-                  bg="#000"
-                  fontSize="14px"
-                  w="60px"
-                  fontWeight={"600"}
-                  borderRadius={"5px"}
+                  border="px solid #111"
+                  fontWeight="600"
+                  display="flex"
+                  color="#111"
+                  alignItems="center"
+                  gap="5px"
                 >
-                  GOLD
+                  <FaMusic fontSize="14px" />
+                  Product
                 </Text>
               </Td>
               <Td>
-                <ManageButton />
+                <ManageButtonTable />
               </Td>
             </Tr>
             <Tr>
+              <Td>Cant Stop Us - Richy Ahmed</Td>
               <Td>
                 <Link href="/" fontWeight={"600"}>
                   Richy Ahmed
@@ -70,26 +76,19 @@ export default function Subscriptions() {
               <Td>11/10/2023</Td>
               <Td>$10.00</Td>
               <Td>
-                <Flex
-                  color="#fff"
-                  px="8px"
-                  py="4px"
-                  bg="-webkit-linear-gradient(90deg, hsla(280, 95%, 57%, 1) 0%, hsla(193, 90%, 55%, 1) 100%);
-                            "
-                  fontSize="14px"
-                  w="60px"
-                  textAlign={"center"}
-                  alignItems={"center"}
-                  fontWeight={"600"}
-                  borderRadius={"5px"}
-                  gap="4px"
+                <Text
+                  fontWeight="600"
+                  color="#9800e8"
+                  display="flex"
+                  alignItems="center"
+                  gap="5px"
                 >
-                  <FaGem fontSize={"12px"} />
-                  VIP
-                </Flex>
+                  <FaRegHeart fontSize="14px" />
+                  Membership
+                </Text>
               </Td>
               <Td>
-                <ManageButton />
+                <ViewProduct />
               </Td>
             </Tr>
           </Tbody>

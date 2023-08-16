@@ -9,13 +9,20 @@ export default function ManageButton() {
             p="0"
             display={"flex"}
             fontSize={"14px"}
-            border="2px black solid"
+            bg="#fff"
+            color="#111"
+            border="2px #111 solid"
             fontWeight={"600"}
-            px="6px"
-            py="3px"
+            px="10px"
+            py="8px"
             gap="5px"
+            lineHeight="1em"
             alignItems={"center"}
             borderRadius={"5px"}
+            cursor="pointer"
+            _hover={{
+              border: "2px solid #DB62FD",
+            }}
           >
             Manage
           </Box>

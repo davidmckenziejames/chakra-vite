@@ -6,6 +6,7 @@ import Posts from "./Sections/Posts";
 import Footer from "./Sections/Footer";
 import FeatureCards from "./Sections/FeatureCards";
 import CTA from "./Sections/CTA";
+import FAQs from "./Sections/FAQs";
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
       <FeatureCards />
       <CTA />
       <Posts />
+      <FAQs />
       <Features />
-
       <Footer />
     </Flex>
   );

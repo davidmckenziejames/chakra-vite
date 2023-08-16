@@ -1,8 +1,7 @@
 import { Box, Heading, Img, Flex, Link, VStack } from "@chakra-ui/react";
-import ProductInfo from "./ProductInfo";
-import { FaPlay } from "react-icons/fa";
+import ProductInfo from "./components/ProductInfo";
 
-export default function DownloadCard() {
+export default function Download2() {
   return (
     <Flex
       w={{ base: "80%", md: "250px" }}
@@ -11,19 +10,11 @@ export default function DownloadCard() {
       bg="white"
       border={"2px solid #111111"}
     >
-      <Box position={"relative"}>
-        <Box
-          bg="whiteAlpha.500"
-          p="10px"
-          position={"absolute"}
-          bottom="15px"
-          right="15px"
-          borderRadius={"50px"}
-        >
-          <FaPlay color="white" fontSize={"14px"} />
-        </Box>
+      <Box>
         <Img
-          src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/4a/4e/a0/4a4ea0b8-bf99-1772-705f-bbabdf98a303/5060519689627.jpg/316x316bb.webp"
+          src={
+            "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/93/6a/9d/936a9de8-ebce-9ec2-3d26-a7bd1ff807a2/0196762004667.png/316x316bb.webp"
+          }
           h="full"
           w="100%"
           maxH="250px"
@@ -34,10 +25,10 @@ export default function DownloadCard() {
 
       <VStack gap="2px" py="10px">
         <Heading color={"black"} fontSize="16px">
-          Can't Stop Us
+          Lose My Mind
         </Heading>
         <Link color={"black"} fontSize="14px" fontWeight="500">
-          Richy Ahmed
+          Jamie Jones
         </Link>
       </VStack>
       <ProductInfo />
