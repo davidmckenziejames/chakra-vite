@@ -23,6 +23,7 @@ import {
   FaEyeSlash,
 } from "react-icons/fa";
 import { useState } from "react";
+import AuthFooterBar from "./AuthFooterBar";
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -268,6 +269,7 @@ export default function Signin() {
           </Flex>
         </Stack>
       </Stack>
+      <AuthFooterBar />
     </Flex>
   );
 }
