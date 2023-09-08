@@ -1,21 +1,6 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Flex,
-  Stack,
-  Icon,
-  Text,
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
-  Heading,
-  VStack,
-} from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, Stack, Icon, Text } from "@chakra-ui/react";
 import { FiUnlock, FiUser, FiHeadphones } from "react-icons/fi";
-import { FaCheck, FaCheckCircle } from "react-icons/fa";
+import StatsIcons from "./StatsIcons";
 
 export default function ProfileHeader() {
   const avatarSizes = { base: "100px", sm: "150px" };
@@ -27,13 +12,24 @@ export default function ProfileHeader() {
       pb="30px"
       mx="auto"
       bg="pink"
-      backgroundImage="url('https://djfan.app/wp-content/uploads/jet-engine-forms/175/2023/05/WhatsApp-Image-2023-05-20-at-17.39.36.jpeg')"
+      position="relative"
+      backgroundImage="url('https://files.djfan.app/artists/158/30b0a512-5020-4c9b-8473-608ef3de5e0f.jpeg')"
       backgroundPosition="center"
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+      }}
     >
       <Flex align="center" flexDirection="column">
-        <Box>
+        <Box pt="10px">
+          <StatsIcons />
           <Avatar
             display="block"
             flexDirection="row"
@@ -41,7 +37,7 @@ export default function ProfileHeader() {
             borderColor="cyan"
             width={avatarSizes}
             height={avatarSizes}
-            src="https://djfan.app/wp-content/uploads/jet-engine-forms/175/2023/05/WhatsApp-Image-2023-05-20-at-17.39.37.jpeg"
+            src="https://files.djfan.app/cache/706eec1f-ea13-41e4-a3f7-fd4dbc98ced2.webp"
           />
         </Box>
         <Stack spacing={0} align="center" justify="center" p={0} pos="relative">
@@ -60,7 +56,7 @@ export default function ProfileHeader() {
               iconSpacing="1"
               colorScheme="purple"
             >
-              Unlock All-A Posts
+              Memberships
             </Button>
             <Button
               leftIcon={<FiUser />}
@@ -74,26 +70,6 @@ export default function ProfileHeader() {
             </Button>
           </Flex>
         </Stack>
-      </Flex>
-      <Flex bg="black" color="white">
-        <VStack>
-          <Heading>Unlock VIP content & Join inner-circle for $1 </Heading>
-          <Text>What's in it for me?</Text>
-          <List spacing={3}>
-            <ListItem>
-              <ListIcon as={FaCheckCircle} color="green.500" />
-              Exclusive songs, mixes, videos posted only
-            </ListItem>
-            <ListItem>
-              <ListIcon as={FaCheckCircle} color="green.500" />
-              Guestlist, VIP, & backstage invites to my tour dates.
-            </ListItem>
-            <ListItem>
-              <ListIcon as={FaCheckCircle} color="green.500" />
-              Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-            </ListItem>
-          </List>
-        </VStack>
       </Flex>
     </Box>
   );

@@ -83,7 +83,7 @@ export default function Signin() {
           mb="10px"
         >
           <Image
-            src="https://djfan.app/wp-content/uploads/2023/07/djfan-logo-white-web.png"
+            src="https://creators.djfan.app/wp-content/uploads/2023/07/djfan-logo-white-web.png"
             width="120px"
           />
           <Heading
@@ -120,6 +120,39 @@ export default function Signin() {
 
         <Stack w={{ base: "100%", md: "300px" }}>
           {showPasswordInput ? (
+            <Stack spacing="10px">
+              <FormControl>
+                <Input
+                  id="csrfToken"
+                  //defaultValue={csrfToken}
+                  hidden
+                />
+                <FormLabel htmlFor="email" fontWeight="500" fontSize="14px">
+                  Email Address
+                </FormLabel>
+                <Input
+                  placeholder="e.g. daftpunk@gmail.com"
+                  type="email"
+                  fontSize="16px"
+                  lineHeight="1em"
+                  _focus={{ border: "2px solid #00f5d4" }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormControl>
+              <Button
+                rightIcon={<FaArrowRight />}
+                color="white"
+                bg="#be04f1"
+                _hover={{ color: "#be04f1", bg: "#ffffff" }}
+                onClick={() => {
+                  // signIn("email", { email, csrfToken });
+                }}
+              >
+                Send me a login link
+              </Button>
+            </Stack>
+          ) : (
             <Stack spacing="10px">
               <FormControl>
                 <FormLabel htmlFor="email-cred" fontSize="14px">
@@ -169,42 +202,10 @@ export default function Signin() {
                 rightIcon={<FaArrowRight />}
                 color="white"
                 bg="#be04f1"
+                mt="5px"
                 _hover={{ color: "#be04f1", bg: "#ffffff" }}
               >
                 Sign in
-              </Button>
-            </Stack>
-          ) : (
-            <Stack spacing="10px">
-              <FormControl>
-                <Input
-                  id="csrfToken"
-                  //defaultValue={csrfToken}
-                  hidden
-                />
-                <FormLabel htmlFor="email" fontWeight="500" fontSize="14px">
-                  Email Address
-                </FormLabel>
-                <Input
-                  placeholder="e.g. daftpunk@gmail.com"
-                  type="email"
-                  fontSize="16px"
-                  lineHeight="1em"
-                  _focus={{ border: "2px solid #00f5d4" }}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </FormControl>
-              <Button
-                rightIcon={<FaArrowRight />}
-                color="white"
-                bg="#be04f1"
-                _hover={{ color: "#be04f1", bg: "#ffffff" }}
-                onClick={() => {
-                  // signIn("email", { email, csrfToken });
-                }}
-              >
-                Send me a login link
               </Button>
             </Stack>
           )}
@@ -220,8 +221,35 @@ export default function Signin() {
             }}
           >
             {showPasswordInput ? (
+              <Stack>
+                <Text p="10px" fontSize="12px" textAlign="center" w="100%">
+                  We’ll email you a magic link for a one-click sign in.
+                </Text>
+                <Text
+                  bg="#2d2d2d"
+                  borderRadius="10px"
+                  border="1px solid #58faea"
+                  p="10px"
+                  fontSize="16px"
+                  textAlign="center"
+                  w="100%"
+                >
+                  Like it old school? &nbsp;
+                  <br />
+                  <Text
+                    as="span"
+                    fontWeight="600"
+                    cursor="pointer"
+                    color="#58faea"
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    Sign in with password
+                  </Text>
+                </Text>
+              </Stack>
+            ) : (
               <Text
-                fontSize="12px"
+                fontSize="16px"
                 w="100%"
                 mt="10px"
                 fontWeight="500"
@@ -235,30 +263,6 @@ export default function Signin() {
               >
                 <FaMagic color="#fff" />
                 Forgot password? Email me a login link
-              </Text>
-            ) : (
-              <Text
-                bg="#2d2d2d"
-                borderRadius="10px"
-                border="1px solid #58faea"
-                p="10px"
-                fontSize="12px"
-                textAlign="center"
-                w="100%"
-                mt="10px"
-              >
-                We’ll email you a magic link for a one-click sign in. Or you can{" "}
-                {""}
-                <Text
-                  as="span"
-                  fontWeight="600"
-                  cursor="pointer"
-                  color="#58faea"
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  sign in with password
-                </Text>
-                {""} instead.
               </Text>
             )}
           </Flex>

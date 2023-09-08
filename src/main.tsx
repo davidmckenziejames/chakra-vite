@@ -31,20 +31,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/feed" element={<Feed />} />
-          <Route path="/profile-loggedout" element={<ProfileOffline />} />
           <Route path="/login" element={<Signin />} />
-          <Route path="/billing" element={<Billing />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/cookies" element={<Cookies />} />
-          <Route path="/blog" element={<Blog />} />
         </Routes>
       </Router>
     </ChakraProvider>

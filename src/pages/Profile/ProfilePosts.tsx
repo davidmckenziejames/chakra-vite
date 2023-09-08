@@ -4,6 +4,10 @@ import PostCardText from "./Feed/PostCardText";
 import PostCardImage from "./Feed/PostCardImage";
 import PostCardImageCarousel from "./Feed/PostCardImageCarousel";
 import PostCardAudio from "./Feed/PostCardAudio";
+import PostCardSoundcloud from "./Feed/PostCardSoundcloud";
+import PostCardYouTube from "./Feed/PostCardYoutube";
+import PostCardSpotify from "./Feed/PostCardSpotify";
+import PostCardMixcloud from "./Feed/PostCardMixcloud";
 
 export default function ProfilePosts() {
   return (
@@ -17,22 +21,16 @@ export default function ProfilePosts() {
       pb="50px"
     >
       <Box width={{ base: "100%", md: "500px" }}>
-        <PostCardVideo />
+        <PostCardSoundcloud />
       </Box>
       <Box width={{ base: "100%", md: "500px" }}>
-        <PostCardAudio />
+        <PostCardYouTube />
       </Box>
       <Box width={{ base: "100%", md: "500px" }}>
-        <PostCardText />
+        <PostCardSpotify />
       </Box>
       <Box width={{ base: "100%", md: "500px" }}>
-        <PostCardImage />
-      </Box>
-      <Box width={{ base: "100%", md: "500px" }}>
-        <PostCardImageCarousel />
-      </Box>
-      <Box width={{ base: "100%", md: "500px" }} justifyContent="center">
-        <Button colorScheme="blue">Load more posts...</Button>
+        <PostCardMixcloud />
       </Box>
     </Flex>
   );
