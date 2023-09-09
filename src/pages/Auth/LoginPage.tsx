@@ -2,7 +2,6 @@ import {
   Button,
   Box,
   AbsoluteCenter,
-  Image,
   Flex,
   FormControl,
   FormLabel,
@@ -15,15 +14,12 @@ import {
   InputRightElement,
   Divider,
 } from "@chakra-ui/react";
-import {
-  FaArrowRight,
-  FaGoogle,
-  FaMagic,
-  FaEye,
-  FaEyeSlash,
-} from "react-icons/fa";
+import { FaArrowRight, FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import AuthFooterBar from "./AuthFooterBar";
+import AuthHeader from "./AuthHeader";
+import PasswordToggle from "./PasswordToggle";
+import MagicToggle from "./MagicToggle";
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -35,67 +31,36 @@ export default function Signin() {
   return (
     <Flex
       w="100%"
-      minH="100vh"
-      pt={{ base: "120px", md: "180px" }}
+      h="100vh"
+      maxH="100vh"
+      pt={{ base: "90px", md: "180px" }}
       justifyContent="center"
       bg="#111111"
       position="relative"
+      overflow="hidden"
     >
-      <Flex
-        w="full"
-        maxW="1200px"
-        gap="10px"
-        py={{ base: "20px", md: "30px" }}
-        px={{ base: "20px", md: "30px" }}
-        pos="absolute"
-        justifyContent="flex-end"
-        alignItems="center"
-        top="0px"
-      >
-        <Text fontSize="14px" color="#fff">
-          New to DJfan?
-        </Text>
-        <Button
-          bg="white"
-          borderRadius="5px"
-          as="a"
-          href="https://auth.djfan.app/api/auth/signup"
-          target="_blank"
-          fontSize="14px"
-          lineHeight="1em"
-          fontWeight="800"
-          color="#111111"
-          transition="all 0.3s ease"
-          px="10px"
-          height="30px"
-          _hover={{
-            bg: "#be04f1",
-            color: "#fff",
-          }}
-        >
-          SIGN UP
-        </Button>
-      </Flex>
+      <AuthHeader />
       <Stack spacing="6" color="white" w={{ base: "80%", md: "unset" }}>
-        <Stack
-          spacing={{ base: "4", md: "4" }}
-          textAlign="center"
-          align="center"
-          mb="10px"
-        >
-          <Image
-            src="https://creators.djfan.app/wp-content/uploads/2023/07/djfan-logo-white-web.png"
-            width="120px"
-          />
+        <Stack textAlign="center" align="center">
           <Heading
             px="20px"
-            fontSize={useBreakpointValue({ base: "20px", md: "20px" })}
+            fontSize={useBreakpointValue({ base: "28px", md: "30px" })}
           >
-            Sign in to your account
+            Welcome Back!
           </Heading>
         </Stack>
 
-        <Stack spacing="2">
+        <Stack spacing="3">
+          <Button
+            color="white"
+            bg="black"
+            _hover={{ color: "#111", bg: "#fff" }}
+            border="1px solid #ffffff"
+            leftIcon={<FaGoogle />}
+            iconSpacing="3"
+          >
+            Sign in with Google
+          </Button>
           <Button
             color="white"
             bg="black"
@@ -119,7 +84,7 @@ export default function Signin() {
           </AbsoluteCenter>
         </Box>
 
-        <Stack w={{ base: "100%", md: "300px" }}>
+        <Stack w={{ base: "100%", md: "325px" }}>
           {showPasswordInput ? (
             <Stack spacing="10px">
               <FormControl>
@@ -152,6 +117,9 @@ export default function Signin() {
               >
                 Send me a login link
               </Button>
+              <Text pt="5px" fontSize="14px" textAlign="center" w="100%">
+                We’ll email you a magic link for a one-click sign in.
+              </Text>
             </Stack>
           ) : (
             <Stack spacing="10px">
@@ -206,12 +174,13 @@ export default function Signin() {
                 mt="5px"
                 _hover={{ color: "#be04f1", bg: "#ffffff" }}
               >
-                Sign in
+                SIGN IN
               </Button>
             </Stack>
           )}
           <Flex
             w="100%"
+            justifyContent="center"
             onClick={() => {
               setShowPasswordInput((prev) => !prev); // toggle the mode
               if (showPasswordInput) {
@@ -221,51 +190,7 @@ export default function Signin() {
               }
             }}
           >
-            {showPasswordInput ? (
-              <Stack>
-                <Text p="10px" fontSize="12px" textAlign="center" w="100%">
-                  We’ll email you a magic link for a one-click sign in.
-                </Text>
-                <Text
-                  bg="#2d2d2d"
-                  borderRadius="10px"
-                  border="1px solid #58faea"
-                  p="10px"
-                  fontSize="16px"
-                  textAlign="center"
-                  w="100%"
-                >
-                  Like it old school? &nbsp;
-                  <br />
-                  <Text
-                    as="span"
-                    fontWeight="600"
-                    cursor="pointer"
-                    color="#58faea"
-                    _hover={{ textDecoration: "underline" }}
-                  >
-                    Sign in with password
-                  </Text>
-                </Text>
-              </Stack>
-            ) : (
-              <Text
-                fontSize="16px"
-                w="100%"
-                mt="10px"
-                fontWeight="500"
-                cursor="pointer"
-                color="#ffffff"
-                display="flex"
-                justifyContent="center"
-                gap="6px"
-                alignItems="center"
-                _hover={{ textDecoration: "underline", color: "#58faea" }}
-              >
-                <FaMagic color="#fff" />
-                Forgot password? Email me a login link
-              </Text>
-            )}
+            {showPasswordInput ? <PasswordToggle /> : <MagicToggle />}
           </Flex>
         </Stack>
       </Stack>
