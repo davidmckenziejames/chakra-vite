@@ -14,7 +14,14 @@ import {
   InputRightElement,
   Divider,
 } from "@chakra-ui/react";
-import { FaArrowRight, FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaGoogle,
+  FaEye,
+  FaEyeSlash,
+  FaFacebook,
+  FaFacebookF,
+} from "react-icons/fa";
 import { useState } from "react";
 import AuthFooterBar from "./AuthFooterBar";
 import AuthHeader from "./AuthHeader";
@@ -40,17 +47,20 @@ export default function Signin() {
       overflow="hidden"
     >
       <AuthHeader />
-      <Stack spacing="6" color="white" w={{ base: "80%", md: "unset" }}>
-        <Stack textAlign="center" align="center">
+      <Stack
+        spacing="6"
+        color="white"
+        w={{ base: "90%", md: "325px" }}
+        maxW="325px"
+      >
+        <Stack spacing="3">
           <Heading
-            px="20px"
-            fontSize={useBreakpointValue({ base: "28px", md: "30px" })}
+            textAlign="center"
+            mb="15px"
+            fontSize={useBreakpointValue({ base: "24px", md: "30px" })}
           >
             Welcome Back!
           </Heading>
-        </Stack>
-
-        <Stack spacing="3">
           <Button
             color="white"
             bg="black"
@@ -66,10 +76,10 @@ export default function Signin() {
             bg="black"
             _hover={{ color: "#111", bg: "#fff" }}
             border="1px solid #ffffff"
-            leftIcon={<FaGoogle />}
+            leftIcon={<FaFacebookF />}
             iconSpacing="3"
           >
-            Sign in with Google
+            Sign in with Facebook
           </Button>
         </Stack>
         <Box position="relative" mt="5px">
@@ -84,7 +94,7 @@ export default function Signin() {
           </AbsoluteCenter>
         </Box>
 
-        <Stack w={{ base: "100%", md: "325px" }}>
+        <Stack w="100%">
           {showPasswordInput ? (
             <Stack spacing="10px">
               <FormControl>
