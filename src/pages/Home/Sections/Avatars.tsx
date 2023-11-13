@@ -4,8 +4,8 @@ import {
   Flex,
   Box,
   Link,
-  Tag,
-  TagLabel,
+  Text,
+  HStack,
 } from "@chakra-ui/react";
 
 const avatars = [
@@ -35,40 +35,42 @@ const avatars = [
 
 export default function Avatars() {
   return (
-    <Flex
-      flexDirection="column"
-      pb={{ base: "50px", md: "0%" }}
-      align={{ base: "center", md: "unset" }}
-    >
-      <Box my="20px">
-        <Tag
-          borderRadius="md"
-          px="3"
-          py="1"
+    <Flex flexDirection="column" align={{ base: "center", md: "center" }}>
+      <HStack position={"relative"} px="25px">
+        <Box
+          position={"absolute"}
+          borderRadius="10px"
+          p="0"
+          zIndex={"1"}
+          right={"5px"}
+          top={"-2px"}
+          transform={"rotate(30deg)"}
           background="-webkit-linear-gradient(90deg, hsla(152, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);"
         >
-          <TagLabel
+          <Text
+            px="5px"
+            py="2px"
             fontStyle="italic"
             fontWeight="700"
             color="black"
-            fontSize={{ base: "14px" }}
+            fontSize={{ base: "12px" }}
           >
-            NEWEST CREATORS
-          </TagLabel>
-        </Tag>
-      </Box>
-      <AvatarGroup size="lg" max={5} className="avatar-excess">
-        {avatars.map(({ name, src }) => (
-          <Link href="#" style={{ display: "inline-block" }} key={name}>
-            <Avatar
-              size="lg"
-              border="2px solid #69F2EB !important"
-              name={name}
-              src={src}
-            />
-          </Link>
-        ))}
-      </AvatarGroup>
+            NEW DJ'S
+          </Text>
+        </Box>
+        <AvatarGroup size="lg" max={5} className="avatar-excess">
+          {avatars.map(({ name, src }) => (
+            <Link href="#" style={{ display: "inline-block" }} key={name}>
+              <Avatar
+                size="lg"
+                border="2px solid #69F2EB !important"
+                name={name}
+                src={src}
+              />
+            </Link>
+          ))}
+        </AvatarGroup>
+      </HStack>
     </Flex>
   );
 }

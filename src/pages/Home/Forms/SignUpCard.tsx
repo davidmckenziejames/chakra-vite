@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardBody,
   CardFooter,
@@ -11,13 +12,13 @@ import {
 } from "@chakra-ui/react";
 import EmailForm from "../Forms/EmailForm";
 import SocialButtons from "../Forms/SocialButtons";
-import { FaUnlock } from "react-icons/fa";
+import { FaUnlock, FaEnvelope } from "react-icons/fa";
 
 export default function SignUpCard() {
   return (
     <Card
       height="100%"
-      w={{ base: "100%", md: "400px" }}
+      w={{ base: "90%", lg: "100%" }}
       bg="unset"
       display="flex"
     >
@@ -25,8 +26,8 @@ export default function SignUpCard() {
         m="0"
         display="flex"
         gap="12px"
-        px="20px"
-        pt="30px"
+        px="25px"
+        pt={{ base: "20px", sm: "30px" }}
         pb="20px"
         bg="white"
         flexDirection="column"
@@ -34,8 +35,16 @@ export default function SignUpCard() {
         borderRadius="lg"
         border="2px solid cyan"
       >
-        <Heading display="flex" alignItems="center" fontSize="24px">
-          <Icon fontSize="22px" as={FaUnlock} marginRight="8px" />
+        <Heading
+          display="flex"
+          alignItems="center"
+          fontSize={{ base: "18px", sm: "24px" }}
+        >
+          <Icon
+            fontSize={{ base: "18px", sm: "22px" }}
+            as={FaUnlock}
+            marginRight="8px"
+          />
           Unlock DJ Content
         </Heading>
         <Text align="center" fontSize="14px" color="#22A9FC" fontWeight="500">
@@ -44,16 +53,34 @@ export default function SignUpCard() {
         <Box w="100%">
           <SocialButtons />
         </Box>
+
         <Text fontSize="14px" color="#A3A3A3">
-          or continue with email
+          or you can
         </Text>
-        <Box w={{ base: "100%", md: "80%" }}>
-          <EmailForm />
-        </Box>
-        <Text align="center" fontSize={{ base: "10px", md: "12px" }} px="20px">
-          By signing up, you are creating a DJfan account and agree to DJfan’s
-          Terms and <Link color="blue.400">Privacy Policy</Link>
-        </Text>
+        <Button
+          bg="white"
+          borderRadius="5px"
+          display="flex"
+          alignItems="center"
+          fontSize="15px"
+          fontWeight="600"
+          variant="unstyled"
+          color="#111111"
+          transition="all 0.3s ease"
+          border="2px solid black"
+          px="15px"
+          gap="8px"
+          height="40px"
+          _hover={{
+            boxShadow: `.15rem .15rem 0 #69f2eb, .3rem .3rem 0 #DB62FD`,
+            color: "black",
+            background: "white",
+            border: "2px solid black",
+          }}
+        >
+          <FaEnvelope />
+          Continue with Email
+        </Button>
       </CardBody>
       <CardFooter
         p="0"

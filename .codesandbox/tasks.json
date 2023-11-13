@@ -12,7 +12,10 @@
     "dev": {
       "name": "dev",
       "command": "yarn dev",
-      "runAtStart": true
+      "runAtStart": true,
+      "preview": {
+        "port": 5173
+      }
     },
     "build": {
       "name": "build",
@@ -23,10 +26,6 @@
       "name": "preview",
       "command": "yarn preview",
       "runAtStart": false
-    },
-    "how to use react router": {
-      "name": "how to use react router",
-      "command": "how to use react router"
     }
   }
 }

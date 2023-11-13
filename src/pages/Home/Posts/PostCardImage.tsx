@@ -14,13 +14,19 @@ import {
   Link,
   MenuItem,
   MenuList,
-  HStack
+  HStack,
 } from "@chakra-ui/react";
-import { BiLike, BiChat, BiShare, BiEdit, BiTrash } from "react-icons/bi";
+import { IconType } from "react-icons";
+
+interface PostMenuProps {
+  icon: IconType;
+  label: string;
+}
+import { BiEdit, BiTrash } from "react-icons/bi";
 import { FiShare, FiEye, FiMoreVertical } from "react-icons/fi";
 import PostActions from "./PostActions";
 
-const PostMenu = ({ icon, label }) => (
+const PostMenu = ({ icon, label }: PostMenuProps) => (
   <MenuItem py="10px" aria-label={label}>
     <Box as={icon} size="14px" mr="8px" />
     <Text>{label}</Text>

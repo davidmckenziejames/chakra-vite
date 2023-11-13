@@ -1,6 +1,6 @@
-import { Box, Flex, Heading, Text, Highlight } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import Avatars from "./Avatars";
-import SignUpCard from "../Forms/SignUpCard";
+import CreateAccount from "./HeaderComponents/CreateAccount";
 
 export default function Hero() {
   return (
@@ -8,60 +8,46 @@ export default function Hero() {
       w="100%"
       backgroundImage="url(https://djfan.ams3.cdn.digitaloceanspaces.com/2023/07/bg-dj.jpg)"
       display="flex"
-      alignItems="center"
       justifyContent="center"
-      py={{ base: "0px", md: "20px" }}
-      px={{ base: "10px", md: "20px" }}
+      px={{ base: "15px", md: "10px" }}
+      py={{ base: "30px", md: "50px" }}
     >
-      <Flex
-        flexDirection={{ base: "column", md: "row" }}
-        maxW={{ base: "100%", md: "1200px" }}
-        flex={1}
-        pt="30px"
-        pb="50px"
-        justifyContent="space-evenly"
-      >
-        <Flex
-          id="left"
-          flexDirection="column"
-          w={{ base: "100%", lg: "50%" }}
-          mr={{ base: "0", lg: "50px" }}
-          gap="20px"
-          px={{ base: "10px", lg: "20px" }}
-          mt="20px"
-          mb="20px"
-        >
+      <Flex maxW={{ base: "100%", md: "1024px" }} alignItems="center">
+        <VStack w={"100%"} gap="20px">
           <Heading
-            pr={{ base: "0", md: "20px" }}
             color="white"
-            fontSize={{ base: "30px", md: "40px" }}
-            lineHeight="1.1em"
+            fontSize={{ base: "36px", md: "58px" }}
+            lineHeight="1.2em"
+            maxW={{ base: "100%", md: "90%" }}
+            textAlign={"center"}
           >
-            We bring creators and fans closer
-            <Highlight
-              query="together"
-              styles={{ pl: "8px", color: "#69f2eb" }}
+            Engage with top DJ's & become part of their{" "}
+            <Text
+              bgGradient="linear(to-l, #5bffec, #f480ff)"
+              bgClip="text"
+              as="span"
             >
-              together
-            </Highlight>
+              inner circle
+            </Text>
             .
           </Heading>
 
           <Text
             color="white"
             fontWeight="500"
-            fontSize={{ base: "16px", md: "19px" }}
+            fontSize={{ base: "20px", md: "24px" }}
+            maxW={{ base: "100%", md: "80%" }}
+            textAlign={"center"}
           >
-            Everything from your favourute DJs in one place. All mixes, tracks,
-            and videos ready to stream. Unlock their hidden playlists, receive
-            exclusive invites, and even chat directly.
+            DJfan has everything you want from your favourite DJs,{" "}
+            <b>all in one place</b>. Access free & exclusive tracks, mixes,
+            videos, playlists, tutorials and more.
           </Text>
-
+          <Box mb={{ base: "20px", md: "24px" }}>
+            <CreateAccount />
+          </Box>
           <Avatars />
-        </Flex>
-        <Box mx={{ base: "10px", md: "0" }}>
-          <SignUpCard />
-        </Box>
+        </VStack>
       </Flex>
     </Box>
   );
